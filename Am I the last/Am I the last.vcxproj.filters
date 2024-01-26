@@ -78,11 +78,11 @@
     <ClCompile Include="Building.cpp">
       <Filter>Entety</Filter>
     </ClCompile>
-    <ClCompile Include="City.cpp">
-      <Filter>Entety</Filter>
-    </ClCompile>
     <ClCompile Include="StartingCity.cpp">
       <Filter>Class + header\Citys\StartingCity</Filter>
+    </ClCompile>
+    <ClCompile Include="City.cpp">
+      <Filter>Class + header\Citys</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -116,11 +116,11 @@
     <ClInclude Include="Building.h">
       <Filter>Entety</Filter>
     </ClInclude>
-    <ClInclude Include="City.h">
-      <Filter>Entety</Filter>
-    </ClInclude>
     <ClInclude Include="StartingCity.h">
       <Filter>Class + header\Citys\StartingCity</Filter>
+    </ClInclude>
+    <ClInclude Include="City.h">
+      <Filter>Class + header\Citys</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
