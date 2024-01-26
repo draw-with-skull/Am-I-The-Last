@@ -44,10 +44,7 @@
     <ClInclude Include="State.h" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Settings\Game_state_keybinds.txt" />
-    <Text Include="Settings\Main_meniu_state_keybinds.txt" />
     <Text Include="Settings\Window_settings.txt" />
-    <Text Include="Settings\Supported_keys.txt" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="Fonts\Kremlin Bolshevik Bold.ttf" />

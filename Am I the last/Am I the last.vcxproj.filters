@@ -112,15 +112,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="Settings\Supported_keys.txt">
-      <Filter>Data</Filter>
-    </Text>
-    <Text Include="Settings\Game_state_keybinds.txt">
-      <Filter>Data</Filter>
-    </Text>
-    <Text Include="Settings\Main_meniu_state_keybinds.txt">
-      <Filter>Data</Filter>
-    </Text>
     <Text Include="Settings\Window_settings.txt">
       <Filter>Data</Filter>
     </Text>
