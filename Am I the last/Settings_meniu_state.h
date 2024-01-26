@@ -1,7 +1,6 @@
 #pragma once
 #include "State.h"
 #include "Button.h"
-#include "Game_state.h"
 #include "Resolution_meniu_state.h"
 
 class Settings_meniu_state :

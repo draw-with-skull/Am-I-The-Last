@@ -1,7 +1,6 @@
 #pragma once
 #include "State.h"
 #include "Button.h"
-#include "Game_state.h"
 #include "Game.h"
 class Resolution_meniu_state :
 	public State

@@ -17,12 +17,10 @@ public://funtions
 	virtual void render(sf::RenderTarget* target=nullptr) = 0;
 	virtual void end_state() = 0;
 	virtual void check_for_quit();
-	//plain
 public://variables
 	bool quit;
 	std::stack<State*>*states;
-private://functions
-private://variables
+
 
 protected:
 	sf::RenderWindow *window;

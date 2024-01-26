@@ -20,7 +20,7 @@ void Main_meniu_state::update_buttons()
 	//buttons funtionality
 	if (this->buttons["BUTTON_START"]->is_pressed())
 	{
-		this->states->push(new Game_state(this->window,this->states));
+		this->states->push(new StartingCity(this->window,this->states));
 	}
 
 	if (this->buttons["BUTTON_SETTINGS"]->is_pressed())
