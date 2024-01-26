@@ -31,10 +31,6 @@ void City::update_city(sf::Vector2f mouse_position,const float &dt,sf::RenderTar
 }
 
 
-
-void City::init_keybinds()
-{}
-
 void City::import_city_data()
 {
 	//bloody magic if it works
@@ -78,7 +74,6 @@ void City::set_view(sf::RenderTarget *target)
 City::City()
 {
 	printf("\n-----\ncity");
-	this->init_keybinds();
 	this->import_city_data();
 }
 

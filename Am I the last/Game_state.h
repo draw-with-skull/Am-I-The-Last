@@ -15,14 +15,13 @@ public://functions
 public://variables
 	std::string city_id;
 private://funtions
-	void init_keybinds();
 	void init_data();
 private://variables
 	City city;
 	sf::Vector2f window_size;
 	sf::View view;
 public://constructor destructor
-	Game_state(sf::RenderWindow *window, std::map<std::string, int>* supported_keys, std::stack<State*>*states);
+	Game_state(sf::RenderWindow *window, std::stack<State*>*states);
 	virtual ~Game_state();
 };
 

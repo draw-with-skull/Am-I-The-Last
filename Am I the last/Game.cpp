@@ -81,7 +81,7 @@ void Game::create_window()
 
 void Game::init_State()
 {
-	this->state.push(new Main_meniu_state(this->window,&this->supported_keys,&this->state));
+	this->state.push(new Main_meniu_state(this->window,&this->state));
 }
 
 void Game::init_window()
@@ -103,23 +103,9 @@ void Game::save_window_settings()
 	window_settings.close();
 }
 
-void Game::init_keys()
-{
-	//imports all keybindes from file 
-	std::ifstream input_keybinds("Settings/Supported_keys.txt");
-	if (input_keybinds.is_open()) {
-		std::string key_name = "";
-		int key_value = 0;
-		while (input_keybinds>>key_name>>key_value) {
-			this->supported_keys[key_name] = key_value;
-		}
-	}
-	input_keybinds.close();
-}
 
 Game::Game() {
 	printf("\n-----\ngame");
-	this->init_keys();
 	this->create_window();
 	this->init_State();
 	

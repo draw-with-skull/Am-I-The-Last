@@ -22,14 +22,10 @@ public://variables
 	bool quit;
 	std::stack<State*>*states;
 private://functions
-protected:
-	virtual void init_keybinds() = 0;
 private://variables
 
 protected:
 	sf::RenderWindow *window;
-	std::map<std::string, int>*supported_keys;
-	std::map<std::string, int> keybinds;
 	
 	//mouse pozition and stuff
 	sf::Vector2i mouse_position_screen;
@@ -37,7 +33,7 @@ protected:
 	sf::Vector2f mouse_position_view;
 
 public://constructor destructor
-	State(sf::RenderWindow *window, std::map<std::string, int>* supported_keys,std::stack<State*>*states);
+	State(sf::RenderWindow *window,std::stack<State*>*states);
 	~State();
 };
 

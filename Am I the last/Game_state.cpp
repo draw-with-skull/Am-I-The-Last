@@ -17,7 +17,7 @@ void Game_state::update(const float &dt)
 
 void Game_state::update_input(const float & dt)
 {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("CLOSE"))))
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
 	{
 
 		this->end_state();
@@ -30,19 +30,7 @@ void Game_state::end_state()
 	printf("end game state");
 }
 
-void Game_state::init_keybinds()
-{
-	std::ifstream input_keybinds("Settings/Game_state_keybinds.txt");
-	if (input_keybinds.is_open()) {
 
-		std::string key_name = "";
-		std::string key = "";
-		while (input_keybinds >> key_name >> key) {
-			this->keybinds[key_name] = this->supported_keys->at(key);
-		}
-	}
-	input_keybinds.close();
-}
 
 void Game_state::init_data()
 {
@@ -50,10 +38,9 @@ void Game_state::init_data()
 	window_size.y = this->window->getSize().y;
 }
 
-Game_state::Game_state(sf::RenderWindow *window, std::map<std::string,int> *supported_keys, std::stack<State*>*states)
-	:State(window,supported_keys,states)
+Game_state::Game_state(sf::RenderWindow *window, std::stack<State*>*states)
+	:State(window,states)
 {
-	init_keybinds();
 	init_data();
 	city.set_view(window);
 }

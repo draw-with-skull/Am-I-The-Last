@@ -47,18 +47,6 @@ void Resolution_meniu_state::end_state()
 	this->states->pop();
 }
 
-void Resolution_meniu_state::init_keybinds()
-{
-	std::ifstream input_keybinds("Settings/Main_meniu_state_keybinds.txt");
-	if (input_keybinds.is_open()) {
-		std::string key_name = "";
-		std::string key = "";
-		while (input_keybinds >> key_name >> key) {
-			this->keybinds[key_name] = this->supported_keys->at(key);
-		}
-	}
-	input_keybinds.close();
-}
 
 void Resolution_meniu_state::init_buttons()
 {
@@ -80,11 +68,10 @@ void Resolution_meniu_state::import_textures()
 }
 
 
-Resolution_meniu_state::Resolution_meniu_state(sf::RenderWindow * window, std::map<std::string, int>* supported_keys, std::stack<State*>* states)
-	:State(window, supported_keys, states)
+Resolution_meniu_state::Resolution_meniu_state(sf::RenderWindow * window, std::stack<State*>* states)
+	:State(window,states)
 {
 	this->import_textures();
-	this->init_keybinds();
 	this->init_buttons();
 }
 

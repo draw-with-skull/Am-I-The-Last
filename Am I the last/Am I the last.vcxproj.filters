@@ -37,6 +37,12 @@
     <Filter Include="Class + header\States\Meniu_states">
       <UniqueIdentifier>{dde731df-6850-4acf-984d-5aa518414cef}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Class + header\Citys">
+      <UniqueIdentifier>{bac4b7d2-20d8-4922-9878-cc25098539c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Class + header\Citys\StartingCity">
+      <UniqueIdentifier>{ce57c61c-9366-456c-a9f0-c015a632e13b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -75,6 +81,9 @@
     <ClCompile Include="City.cpp">
       <Filter>Entety</Filter>
     </ClCompile>
+    <ClCompile Include="StartingCity.cpp">
+      <Filter>Class + header\Citys\StartingCity</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -109,6 +118,9 @@
     </ClInclude>
     <ClInclude Include="City.h">
       <Filter>Entety</Filter>
+    </ClInclude>
+    <ClInclude Include="StartingCity.h">
+      <Filter>Class + header\Citys\StartingCity</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

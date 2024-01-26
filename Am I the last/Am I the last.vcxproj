@@ -30,6 +30,7 @@
     <ClCompile Include="Player_top.cpp" />
     <ClCompile Include="Resolution_meniu_state.cpp" />
     <ClCompile Include="Settings_meniu_state.cpp" />
+    <ClCompile Include="StartingCity.cpp" />
     <ClCompile Include="State.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -43,6 +44,7 @@
     <ClInclude Include="Player_top.h" />
     <ClInclude Include="Resolution_meniu_state.h" />
     <ClInclude Include="Settings_meniu_state.h" />
+    <ClInclude Include="StartingCity.h" />
     <ClInclude Include="State.h" />
   </ItemGroup>
   <ItemGroup>

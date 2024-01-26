@@ -21,7 +21,6 @@ private://functions
 	//States
 		void init_State();
 	//others
-		void init_keys();
 	//Window
 		void init_window();
 		void save_window_settings();
@@ -29,7 +28,6 @@ private://functions
 	private://variables
 	//States 
 		std::stack<State*> state;
-		std::map<std::string, int> supported_keys;
 	//Delta time
 		float dt;
 		sf::Clock dt_Clock;

@@ -16,7 +16,6 @@ public://funtions
 	void end_state();
 public://variables
 private://functions
-	void init_keybinds();
 	void init_buttons();
 	void import_textures();
 private://variables
@@ -25,7 +24,7 @@ private://variables
 	std::map<std::string, Button*>buttons;
 
 public://constructors destructors
-	Settings_meniu_state(sf::RenderWindow *window,std::map<std::string,int>*supported_keys,std::stack<State*>*states);
+	Settings_meniu_state(sf::RenderWindow *window,std::stack<State*>*states);
 	virtual ~Settings_meniu_state();
 };
 

@@ -31,11 +31,11 @@ void State::check_for_quit()
 }
 
 
-State::State(sf::RenderWindow *window,std::map<std::string,int> * supported_keys, std::stack<State*>*states)
+State::State(sf::RenderWindow *window, std::stack<State*>*states)
 {
 	this->window = window;
-	this->supported_keys = supported_keys;
 	this->states = states;
+	this->quit = false;
 }
 
 State::~State()

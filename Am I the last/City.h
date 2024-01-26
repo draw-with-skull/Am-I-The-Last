@@ -12,7 +12,6 @@ public://funtions
 public://variables
 	bool checked;
 private://funtions
-	void init_keybinds();
 	void import_city_data();
 	void update_view(sf::RenderTarget *target);
 	

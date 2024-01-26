@@ -24,7 +24,7 @@ void Settings_meniu_state::update_buttons()
 		//add audio state
 	}
 	if (this->buttons["BUTTON_RESOLUTION"]->is_pressed()) {
-		this->states->push(new Resolution_meniu_state(this->window, this->supported_keys, this->states));
+		this->states->push(new Resolution_meniu_state(this->window, this->states));
 	}
 	if (this->buttons["BUTTON_DIFFICULTY"]->is_pressed()) {
 		//resolution state
@@ -56,18 +56,6 @@ void Settings_meniu_state::end_state()
 	this->states->pop();
 }
 
-void Settings_meniu_state::init_keybinds()
-{
-	std::ifstream input_keybinds("Settings/Main_meniu_state_keybinds.txt");
-	if (input_keybinds.is_open()) {
-		std::string key_name = "";
-		std::string key = "";
-		while (input_keybinds >> key_name >> key) {
-			this->keybinds[key_name] = this->supported_keys->at(key);
-		}
-	}
-	input_keybinds.close();
-}
 
 void Settings_meniu_state::init_buttons()
 {
@@ -85,12 +73,11 @@ void Settings_meniu_state::import_textures()
 	this->background.setTexture(*background_texture);
 }
 
-Settings_meniu_state::Settings_meniu_state(sf::RenderWindow *window, std::map<std::string, int>*supported_keys, std::stack<State*>*states)
-	:State(window, supported_keys, states)
+Settings_meniu_state::Settings_meniu_state(sf::RenderWindow *window, std::stack<State*>*states)
+	:State(window, states)
 {
 	printf("\n-----\nsettings_state");
 	this->import_textures();
-	this->init_keybinds();
 	this->init_buttons();
 }
 
