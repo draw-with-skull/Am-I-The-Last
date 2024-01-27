@@ -16,6 +16,7 @@ void StartingCity::update(const float& dt)
 	update_input(dt);
 	update_view();
 	//printf("\nupdate");
+	if (quit)this->end_state();
 
 }
 
@@ -39,7 +40,9 @@ void StartingCity::render(sf::RenderTarget* target)
 
 void StartingCity::end_state()
 {
-	//save stuff
+
+	this->view.setSize(this->view_size);
+	this->view.setCenter(this->view_size / 2.f);
 }
 
 void StartingCity::import_assets()
