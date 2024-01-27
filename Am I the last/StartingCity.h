@@ -1,5 +1,6 @@
 #pragma once
 #include"State.h"
+#include"Player_top.h"
 class StartingCity:public State
 {
 public:
@@ -14,6 +15,7 @@ public:
 private:
 	void update_view();
 private:
+	Player_top *player;
 	sf::Texture* map_texture;
 	sf::Sprite map;
 	sf::View view;

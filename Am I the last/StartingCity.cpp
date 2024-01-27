@@ -5,16 +5,19 @@ StartingCity::StartingCity(sf::RenderWindow* window, std::stack<State*>* states)
 	printf("\n StartingCity");
 	this->import_assets();
 	this->view.setSize(this->view_size);
+	this->player = new Player_top();
 }
 
 StartingCity::~StartingCity()
 {
+	delete this->player;
 }
 
 void StartingCity::update(const float& dt)
 {
 	update_input(dt);
 	update_view();
+	this->player->update(this->mouse_position_view,dt);
 	//printf("\nupdate");
 	if (quit)this->end_state();
 
@@ -35,6 +38,7 @@ void StartingCity::render(sf::RenderTarget* target)
 	target->setView(this->view);
 
 	target->draw(this->map);
+	player->render(target);
 	//printf("\nrender");
 }
 
@@ -55,7 +59,7 @@ void StartingCity::import_assets()
 void StartingCity::update_view()
 {
 
-	sf::Vector2f view_center = mouse_position_view;
+	sf::Vector2f view_center = this->player->position;
 	sf::Vector2f map_size = sf::Vector2f(map_texture->getSize());
 
 	//set bounds on x
