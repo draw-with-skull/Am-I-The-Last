@@ -30,6 +30,10 @@ void Game::update()
 {
 	//update events
 	this->update_events_sfml();
+	if (this->state.size() > 1 && this->state.top()->quit == true) {
+		delete this->state.top();
+		this->state.pop();
+	}
 	//checks states
 	if (!this->state.empty()) {
 		this->state.top()->update(this->dt);	
