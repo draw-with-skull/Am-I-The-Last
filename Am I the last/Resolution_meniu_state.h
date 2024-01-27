@@ -10,6 +10,7 @@ public://funtions
 	void update(const float &dt);
 	void update_buttons();
 	void render(sf::RenderTarget *target = nullptr);
+	void import_assets() override;
 	void render_buttons(sf::RenderTarget *target = nullptr);
 	void end_state();
 public://variables

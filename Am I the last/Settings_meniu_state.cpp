@@ -44,6 +44,10 @@ void Settings_meniu_state::render(sf::RenderTarget * target)
 	this->render_buttons(target);
 }
 
+void Settings_meniu_state::import_assets()
+{
+}
+
 void Settings_meniu_state::render_buttons(sf::RenderTarget * target)
 {
 	for (auto&initializer : this->buttons)

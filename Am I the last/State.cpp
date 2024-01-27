@@ -16,18 +16,8 @@ void State::update_mouse_position()
 
 }
 
-void State::render(sf::RenderTarget *target)
-{
-}
-
-void State::end_state()
-{
-
-}
-
 void State::check_for_quit()
 {
-	
 }
 
 

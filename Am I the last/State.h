@@ -16,6 +16,7 @@ public://funtions
 	virtual void update_mouse_position();
 	virtual void render(sf::RenderTarget* target=nullptr) = 0;
 	virtual void end_state() = 0;
+	virtual void import_assets() = 0;
 	virtual void check_for_quit();
 public://variables
 	bool quit;

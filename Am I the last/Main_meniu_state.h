@@ -11,6 +11,7 @@ public://functions
 	void update_buttons();
 	void render(sf::RenderTarget *target = nullptr);
 	void render_buttons(sf::RenderTarget *target=nullptr);
+	virtual void import_assets() override;
 	void end_state();
 public://variables
 
@@ -28,5 +29,8 @@ private://variables
 public://constructor destructor
 	Main_meniu_state(sf::RenderWindow *window, std::stack<State*>*states);
 	virtual ~Main_meniu_state();
+
+	// Inherited via State
+	
 };
 

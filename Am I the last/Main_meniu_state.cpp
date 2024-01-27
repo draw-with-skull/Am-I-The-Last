@@ -50,6 +50,10 @@ void Main_meniu_state::render_buttons(sf::RenderTarget *target)
 	}
 }
 
+void Main_meniu_state::import_assets()
+{
+}
+
 void Main_meniu_state::end_state()
 {
 	this->states->pop();
