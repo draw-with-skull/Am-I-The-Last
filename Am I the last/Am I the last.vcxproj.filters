@@ -43,6 +43,9 @@
     <Filter Include="SRC\Entety">
       <UniqueIdentifier>{f1a2c437-f6f7-459d-8ff8-f1a938135888}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\Maps">
+      <UniqueIdentifier>{ceec1299-e56d-4e19-8a68-15bccaf1a0e2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -172,6 +175,15 @@
     </Image>
     <Image Include="Textures\Buttons\Start.png">
       <Filter>Resource Files\Buttons</Filter>
+    </Image>
+    <Image Include="Textures\Maps\1.png">
+      <Filter>Resource Files\Maps</Filter>
+    </Image>
+    <Image Include="Textures\Maps\2.png">
+      <Filter>Resource Files\Maps</Filter>
+    </Image>
+    <Image Include="Textures\Maps\3.png">
+      <Filter>Resource Files\Maps</Filter>
     </Image>
   </ItemGroup>
 </Project>

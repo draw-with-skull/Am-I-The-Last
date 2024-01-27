@@ -65,6 +65,9 @@
     <Image Include="Textures\Buttons\Size5.png" />
     <Image Include="Textures\Buttons\Size6.png" />
     <Image Include="Textures\Buttons\Start.png" />
+    <Image Include="Textures\Maps\1.png" />
+    <Image Include="Textures\Maps\2.png" />
+    <Image Include="Textures\Maps\3.png" />
     <Image Include="Textures\Splash_Art\start_meniu_Artwork.png" />
     <Image Include="Textures\Texture_buttons\Start.png" />
   </ItemGroup>
