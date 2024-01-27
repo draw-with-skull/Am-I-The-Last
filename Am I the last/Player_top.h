@@ -4,18 +4,18 @@
 class Player_top
 {
 public://functions
-	void render_player(sf::RenderTarget *target);
-	void update_player( sf::Vector2f mouse_position,const float &dt);
+	void render(sf::RenderTarget *target);
+	void update( sf::Vector2f mouse_position,const float &dt);
 
 public://variables
-	sf::Vector2f player_position;
-	sf::Sprite player_sprite;
+	sf::Vector2f position;
+	sf::Sprite sprite;
 	bool is_moveing;
 private://funtion
 	void calculate_diraction(const sf::Vector2f mouse_position);
 	void import_texture();
 private://variables
-	sf::Texture *player_texture;
+	sf::Texture *texture;
 	
 	sf::Vector2f destination;
 	sf::Vector2f move;
