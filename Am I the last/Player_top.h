@@ -1,6 +1,6 @@
 #pragma once
 #include<SFML/Graphics.hpp>
-#define PI 3.14
+#include"Math.h"
 class Player_top
 {
 public://functions
@@ -19,6 +19,7 @@ private://variables
 	
 	sf::Vector2f destination;
 	sf::Vector2f move;
+	float speed = 100;
 public://constructor destructor
 	Player_top();
 	virtual ~Player_top();
