@@ -2,6 +2,7 @@
 #include "Button.h"
 #include "StartingCity.h"
 #include "Settings_meniu_state.h"
+#include "StateManager.h"
 class Main_meniu_state :
 	public State
 {
@@ -27,7 +28,7 @@ private://variables
 	
 	
 public://constructor destructor
-	Main_meniu_state(sf::RenderWindow *window, std::stack<State*>*states);
+	Main_meniu_state(sf::RenderWindow *window, StateManager* manager);
 	virtual ~Main_meniu_state();
 
 	// Inherited via State

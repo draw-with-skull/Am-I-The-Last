@@ -49,6 +49,12 @@
     <Filter Include="SRC\Util">
       <UniqueIdentifier>{705ff14d-411b-408a-a3ae-fa043eadfdf8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Data\StartingCity">
+      <UniqueIdentifier>{76b13d1a-9d07-4d5c-accb-b019a2322168}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SRC\Managers">
+      <UniqueIdentifier>{8bf5be0d-7e22-44fa-bda0-a519d7987384}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -87,6 +93,9 @@
     <ClCompile Include="Math.cpp">
       <Filter>SRC\Util</Filter>
     </ClCompile>
+    <ClCompile Include="StateManager.cpp">
+      <Filter>SRC\Managers</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -121,6 +130,9 @@
     </ClInclude>
     <ClInclude Include="Math.h">
       <Filter>SRC\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="StateManager.h">
+      <Filter>SRC\Managers</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

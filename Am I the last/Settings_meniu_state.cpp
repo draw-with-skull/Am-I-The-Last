@@ -24,7 +24,7 @@ void Settings_meniu_state::update_buttons()
 		//add audio state
 	}
 	if (this->buttons["BUTTON_RESOLUTION"]->is_pressed()) {
-		this->states->push(new Resolution_meniu_state(this->window, this->states));
+		this->manager->add_state(new Resolution_meniu_state(this->window,this->manager));
 	}
 	if (this->buttons["BUTTON_DIFFICULTY"]->is_pressed()) {
 		//resolution state
@@ -57,7 +57,7 @@ void Settings_meniu_state::render_buttons(sf::RenderTarget * target)
 void Settings_meniu_state::end_state()
 {
 	this->~Settings_meniu_state();
-	this->states->pop();
+	this->manager->revome_state();
 }
 
 
@@ -77,7 +77,7 @@ void Settings_meniu_state::import_textures()
 	this->background.setTexture(*background_texture);
 }
 
-Settings_meniu_state::Settings_meniu_state(sf::RenderWindow *window, std::stack<State*>*states)
+Settings_meniu_state::Settings_meniu_state(sf::RenderWindow *window, StateManager* states)
 	:State(window, states)
 {
 	printf("\n-----\nsettings_state");

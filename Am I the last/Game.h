@@ -1,5 +1,6 @@
 #pragma once
 #include "Main_meniu_state.h"
+#include "StateManager.h"
 class Game {
 
 public://functions
@@ -27,7 +28,7 @@ private://functions
 	
 	private://variables
 	//States 
-		std::stack<State*> state;
+		StateManager* state_manager;
 	//Delta time
 		float dt;
 		sf::Clock dt_Clock;

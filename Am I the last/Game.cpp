@@ -30,13 +30,9 @@ void Game::update()
 {
 	//update events
 	this->update_events_sfml();
-	if (this->state.size() > 1 && this->state.top()->quit == true) {
-		delete this->state.top();
-		this->state.pop();
-	}
-	//checks states
-	if (!this->state.empty()) {
-		this->state.top()->update(this->dt);	
+
+	if (this->state_manager->get_state()) {
+		this->state_manager->get_state()->update(this->dt);
 	}
 	else
 	{
@@ -52,8 +48,7 @@ void Game::render()
 	this->window->clear();
 
 	//rendering
-	if (this->state.size()>0)
-		this->state.top()->render();
+	this->state_manager->get_state()->render();
 	//display
 	this->window->display();
 }
@@ -85,7 +80,9 @@ void Game::create_window()
 
 void Game::init_State()
 {
-	this->state.push(new Main_meniu_state(this->window,&this->state));
+
+	this->state_manager->add_state(new Main_meniu_state(this->window, this->state_manager));
+	//this->state.push(new Main_meniu_state(this->window,&this->state));
 }
 
 void Game::init_window()
@@ -111,16 +108,14 @@ void Game::save_window_settings()
 Game::Game() {
 	printf("\n-----\ngame");
 	this->create_window();
+	this->state_manager = new StateManager();
 	this->init_State();
 	
 }
 Game::~Game()
 {	
+	delete this->state_manager;
 	delete this->window;
-	//deletes all the pointers and information from state
-	while (!this->state.empty()) {
-		delete this->state.top();
-		this->state.pop();
-	}
+	
 	printf("\ndelete game");
 }

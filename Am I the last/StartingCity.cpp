@@ -1,6 +1,6 @@
 #include "StartingCity.h"
 
-StartingCity::StartingCity(sf::RenderWindow* window, std::stack<State*>* states):State(window,states)
+StartingCity::StartingCity(sf::RenderWindow* window,StateManager* manager ):State(window,manager)
 {
 	printf("\n StartingCity");
 	this->import_assets();
@@ -8,7 +8,7 @@ StartingCity::StartingCity(sf::RenderWindow* window, std::stack<State*>* states)
 	this->player = new Player_top();
 }
 
-StartingCity::~StartingCity()
+inline StartingCity::~StartingCity()
 {
 	delete this->player;
 }

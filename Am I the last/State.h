@@ -1,16 +1,16 @@
 #pragma once
 
-//#include <SFML/Graphics.hpp>
 #include "Entity.h"
 #include <iostream>
 #include <fstream>
 #include <vector>
 #include <stack>
 #include <map>
+#include "StateManager.h"
+class StateManager;
 class State
 {
 public://funtions
-	//conected to some sub classes
 	virtual void update(const float& dt) = 0;
 	virtual void update_input(const float& dt) = 0;
 	virtual void update_mouse_position();
@@ -20,8 +20,7 @@ public://funtions
 	virtual void check_for_quit();
 public://variables
 	bool quit;
-	std::stack<State*>*states;
-
+	StateManager* manager;
 
 protected:
 	sf::RenderWindow *window;
@@ -32,7 +31,6 @@ protected:
 	sf::Vector2f mouse_position_view;
 
 public://constructor destructor
-	State(sf::RenderWindow *window,std::stack<State*>*states);
+	State(sf::RenderWindow *window,StateManager *manager);
 	~State();
 };
-

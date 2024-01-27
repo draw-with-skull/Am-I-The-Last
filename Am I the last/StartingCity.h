@@ -1,10 +1,11 @@
 #pragma once
 #include"State.h"
 #include"Player_top.h"
+#include"StateManager.h"
 class StartingCity:public State
 {
 public:
-	StartingCity(sf::RenderWindow* window, std::stack<State*>* states);
+	StartingCity(sf::RenderWindow* window,StateManager* manager);
 	virtual ~StartingCity();
 	// Inherited via State
 	virtual void update(const float& dt) override;

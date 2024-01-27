@@ -21,10 +21,10 @@ void State::check_for_quit()
 }
 
 
-State::State(sf::RenderWindow *window, std::stack<State*>*states)
+State::State(sf::RenderWindow *window,StateManager*manager)
 {
 	this->window = window;
-	this->states = states;
+	this->manager = manager;
 	this->quit = false;
 }
 

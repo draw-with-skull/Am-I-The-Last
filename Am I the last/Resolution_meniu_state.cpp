@@ -48,7 +48,7 @@ void Resolution_meniu_state::render_buttons(sf::RenderTarget * target)
 void Resolution_meniu_state::end_state()
 {
 	this->~Resolution_meniu_state();
-	this->states->pop();
+	this->manager->revome_state();
 }
 
 
@@ -72,18 +72,10 @@ void Resolution_meniu_state::import_textures()
 }
 
 
-Resolution_meniu_state::Resolution_meniu_state(sf::RenderWindow * window, std::stack<State*>* states)
+Resolution_meniu_state::Resolution_meniu_state(sf::RenderWindow * window,StateManager* states)
 	:State(window,states)
 {
 	this->import_textures();
 	this->init_buttons();
 }
 
-Resolution_meniu_state::~Resolution_meniu_state()
-{
-	delete this->background_texture;
-	for (auto initializer = this->buttons.begin(); initializer != this->buttons.end(); ++initializer) {
-		delete initializer->second;
-	}
-	printf("\ndelete Resolution meniu");
-}

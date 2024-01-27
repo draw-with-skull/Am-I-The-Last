@@ -2,7 +2,7 @@
 #include "State.h"
 #include "Button.h"
 #include "Resolution_meniu_state.h"
-
+#include "StateManager.h"
 class Settings_meniu_state :
 	public State
 {
@@ -24,7 +24,7 @@ private://variables
 	std::map<std::string, Button*>buttons;
 
 public://constructors destructors
-	Settings_meniu_state(sf::RenderWindow *window,std::stack<State*>*states);
+	Settings_meniu_state(sf::RenderWindow *window,StateManager* state);
 	virtual ~Settings_meniu_state();
 };
 

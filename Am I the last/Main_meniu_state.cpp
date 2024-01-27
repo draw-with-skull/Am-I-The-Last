@@ -20,12 +20,13 @@ void Main_meniu_state::update_buttons()
 	//buttons funtionality
 	if (this->buttons["BUTTON_START"]->is_pressed())
 	{
-		this->states->push(new StartingCity(this->window,this->states));
+
+		this->manager->add_state(new StartingCity(this->window,this->manager));
 	}
 
 	if (this->buttons["BUTTON_SETTINGS"]->is_pressed())
 	{
-		this->states->push(new Settings_meniu_state(this->window, this->states));
+		this->manager->add_state(new Settings_meniu_state(this->window, this->manager));
 	}
 
 	if (this->buttons["BUTTON_EXIT"]->is_pressed())
@@ -56,8 +57,8 @@ void Main_meniu_state::import_assets()
 
 void Main_meniu_state::end_state()
 {
-	this->states->pop();
 	this->~Main_meniu_state();
+	this->manager->revome_state();
 }
 
 
@@ -76,8 +77,8 @@ void Main_meniu_state::import_textures()
 	this->background.setTexture(*background_texture);
 }
 
-Main_meniu_state::Main_meniu_state(sf::RenderWindow * window, std::stack<State*>*states)
-	:State(window,states)
+Main_meniu_state::Main_meniu_state(sf::RenderWindow* window, StateManager* manager)
+	:State(window, manager)
 {	
 	printf("\n-----\nmain_meniu_state");
 	this->import_textures();

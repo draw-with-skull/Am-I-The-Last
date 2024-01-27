@@ -31,6 +31,7 @@
     <ClCompile Include="Settings_meniu_state.cpp" />
     <ClCompile Include="StartingCity.cpp" />
     <ClCompile Include="State.cpp" />
+    <ClCompile Include="StateManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Building.h" />
@@ -44,6 +45,7 @@
     <ClInclude Include="Settings_meniu_state.h" />
     <ClInclude Include="StartingCity.h" />
     <ClInclude Include="State.h" />
+    <ClInclude Include="StateManager.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Settings\Window_settings.txt" />
