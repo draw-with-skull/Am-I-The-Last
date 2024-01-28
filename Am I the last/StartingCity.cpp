@@ -47,6 +47,7 @@ void StartingCity::end_state()
 {
 	this->view.setSize(this->view_size);
 	this->view.setCenter(this->view_size / 2.f);
+	this->window->setView(this->view);
 	this->save_data();
 }
 
