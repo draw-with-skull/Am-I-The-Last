@@ -32,6 +32,7 @@ void Game::update()
 	this->update_events_sfml();
 
 	if (this->state_manager->get_state()) {
+		//returns nullptr if the state stack ins empty
 		this->state_manager->get_state()->update(this->dt);
 	}
 	else
@@ -82,8 +83,7 @@ void Game::init_State()
 {
 
 	this->state_manager->add_state(new Main_meniu_state(this->window, this->state_manager));
-	//this->state.push(new Main_meniu_state(this->window,&this->state));
-}
+} 
 
 void Game::init_window()
 {	

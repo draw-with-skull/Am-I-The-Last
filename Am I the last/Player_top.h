@@ -6,7 +6,7 @@ class Player_top
 public://functions
 	void render(sf::RenderTarget *target);
 	void update( sf::Vector2f mouse_position,const float &dt);
-
+	void set_position(sf::Vector2f position);
 public://variables
 	sf::Vector2f position;
 	sf::Sprite sprite;

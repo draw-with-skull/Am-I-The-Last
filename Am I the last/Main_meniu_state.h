@@ -24,7 +24,6 @@ private://variables
 	sf::Font game_font;
 	sf::Texture *background_texture;
 	std::map<std::string, Button*>buttons;
-
 	
 	
 public://constructor destructor

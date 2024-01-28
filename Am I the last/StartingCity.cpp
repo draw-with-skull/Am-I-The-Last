@@ -6,6 +6,7 @@ StartingCity::StartingCity(sf::RenderWindow* window,StateManager* manager ):Stat
 	this->import_assets();
 	this->view.setSize(this->view_size);
 	this->player = new Player_top();
+	this->import_data();
 }
 
 inline StartingCity::~StartingCity()
@@ -44,9 +45,9 @@ void StartingCity::render(sf::RenderTarget* target)
 
 void StartingCity::end_state()
 {
-
 	this->view.setSize(this->view_size);
 	this->view.setCenter(this->view_size / 2.f);
+	this->save_data();
 }
 
 void StartingCity::import_assets()
@@ -77,4 +78,27 @@ void StartingCity::update_view()
 
 	this->view.setCenter(view_center);
 	
+}
+
+void StartingCity::import_data()
+{
+	//import player position
+	std::ifstream city_data;
+	sf::Vector2f player_position;
+	city_data.open("City/StartingCity/data.txt");
+	city_data >> player_position.x;
+	city_data >> player_position.y;
+	city_data.close();
+	//set Player Position
+	this->player->set_position(player_position) ;
+}
+
+void StartingCity::save_data()
+{
+	//save player position;
+	std::ofstream city_data;
+	city_data.open("City/StartingCity/data.txt");
+	city_data << this->player->position.x<<" ";
+	city_data << this->player->position.y;
+	city_data.close();
 }

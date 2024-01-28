@@ -15,11 +15,12 @@ public:
 	virtual void import_assets() override;
 private:
 	void update_view();
+	void import_data();
+	void save_data();
 private:
 	Player_top *player;
 	sf::Texture* map_texture;
 	sf::Sprite map;
 	sf::View view;
 	const sf::Vector2f view_size = sf::Vector2f(480, 270);
-
 };

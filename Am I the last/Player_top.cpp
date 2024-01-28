@@ -24,6 +24,11 @@ void Player_top::update( sf::Vector2f mouse_position,const float &dt)
 		
 }
 
+void Player_top::set_position(sf::Vector2f position)
+{
+	this->sprite.setPosition(position);
+}
+
 void Player_top::calculate_diraction(const sf::Vector2f mouse_position)
 {
 	destination = mouse_position;

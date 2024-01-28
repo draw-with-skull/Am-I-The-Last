@@ -31,6 +31,10 @@ void StateManager::switch_state(State *state)
 
   State* StateManager::get_state()
 {
+		//remove state
+	if (this->states->top()->quit) {
+		this->revome_state();
+	}
 	if (!this->states->empty()) {
 		return this->states->top();
 	}
