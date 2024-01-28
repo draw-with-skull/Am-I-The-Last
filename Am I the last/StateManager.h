@@ -12,4 +12,5 @@ public:
 	virtual ~StateManager();
 private:
 	std::stack<State*> *states;
+	State* state_to_change= nullptr;
 };

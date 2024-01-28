@@ -8,7 +8,6 @@ StateManager::StateManager()
 
 void StateManager::add_state(State *state)
 {
-	//this->states->push(new Main_meniu_state(nullptr, nullptr));
 	this->states->push(state);
 }
 
@@ -22,18 +21,21 @@ void StateManager::revome_state()
 
 void StateManager::switch_state(State *state)
 {
-	if (this->states->size() > 0) {
-		delete this->states->top();
-		this->states->pop();
-		this->states->push(state);
-	}
+	this->state_to_change = state;
 }
 
   State* StateManager::get_state()
 {
-		//remove state
+	//remove state
 	if (this->states->top()->quit) {
 		this->revome_state();
+	}
+	// switch state
+	if (this->state_to_change) {
+		delete this->states->top();
+		this->states->pop();
+		this->states->push(this->state_to_change);
+		this->state_to_change = nullptr;
 	}
 	if (!this->states->empty()) {
 		return this->states->top();
