@@ -1,5 +1,5 @@
 #include "StartingCity.h"
-
+#include "FirstVillage.h"
 StartingCity::StartingCity(sf::RenderWindow* window,StateManager* manager ):State(window,manager)
 {
 	printf("\n StartingCity");
@@ -7,6 +7,7 @@ StartingCity::StartingCity(sf::RenderWindow* window,StateManager* manager ):Stat
 	this->view.setSize(this->view_size);
 	this->player = new Player_top();
 	this->import_data();
+	this->change_scene = sf::FloatRect(0,190,50,70);
 }
 
 inline StartingCity::~StartingCity()
@@ -20,7 +21,7 @@ void StartingCity::update(const float& dt)
 	update_view();
 	this->player->update(this->mouse_position_view,dt);
 	//printf("\nupdate");
-	if (quit)this->end_state();
+	if (this->quit)this->end_state();
 
 }
 
@@ -28,7 +29,12 @@ void StartingCity::update_input(const float& dt)
 {
 	this->update_mouse_position();
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
-		this->quit = true;
+			this->quit = true;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
+		if (this->change_scene.contains(this->player->position)) {
+			this->manager->switch_state(new FirstVillage(this->window,this->manager));
+		}
 	}
 }
 

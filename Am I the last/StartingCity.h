@@ -22,5 +22,6 @@ private:
 	sf::Texture* map_texture;
 	sf::Sprite map;
 	sf::View view;
+	sf::FloatRect change_scene;
 	const sf::Vector2f view_size = sf::Vector2f(480, 270);
 };

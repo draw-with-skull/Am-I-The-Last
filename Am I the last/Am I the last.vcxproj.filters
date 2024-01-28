@@ -55,6 +55,9 @@
     <Filter Include="SRC\Managers">
       <UniqueIdentifier>{8bf5be0d-7e22-44fa-bda0-a519d7987384}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SRC\Citys\FirstVillage">
+      <UniqueIdentifier>{ec5fbc6e-1d05-423b-93f3-0bb9ef85e2c3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -96,6 +99,9 @@
     <ClCompile Include="StateManager.cpp">
       <Filter>SRC\Managers</Filter>
     </ClCompile>
+    <ClCompile Include="FirstVillage.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -133,6 +139,9 @@
     </ClInclude>
     <ClInclude Include="StateManager.h">
       <Filter>SRC\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="FirstVillage.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
