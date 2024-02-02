@@ -28,12 +28,12 @@ void StartingCity::update(const float& dt)
 void StartingCity::update_input(const float& dt)
 {
 	this->update_mouse_position();
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
-			this->quit = true;
-	}
+
+	this->try_to_end_state(sf::Keyboard::Escape);
+	
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
 		if (this->change_scene.contains(this->player->position)) {
-			this->manager->switch_state(new FirstVillage(this->window,this->manager));
+			this->manager->add_state(new FirstVillage(this->window,this->manager));
 		}
 	}
 }

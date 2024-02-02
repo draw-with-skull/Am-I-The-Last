@@ -13,9 +13,7 @@ void FirstVillage::update(const float& dt)
 
 void FirstVillage::update_input(const float& dt)
 {
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape)) {
-		this->quit = true;
-	}
+	this->try_to_end_state(sf::Keyboard::Escape);
 }
 
 void FirstVillage::render(sf::RenderTarget* target)
