@@ -22,6 +22,6 @@ private:
 	sf::Texture* map_texture;
 	sf::Sprite map;
 	sf::View view;
-	sf::FloatRect change_scene;
+	sf::FloatRect change_scene_to_first_village;
 	const sf::Vector2f view_size = sf::Vector2f(480, 270);
 };

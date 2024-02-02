@@ -7,12 +7,13 @@ StartingCity::StartingCity(sf::RenderWindow* window,StateManager* manager ):Stat
 	this->view.setSize(this->view_size);
 	this->player = new Player_top();
 	this->import_data();
-	this->change_scene = sf::FloatRect(0,190,50,70);
+	this->change_scene_to_first_village = sf::FloatRect(0,190,50,70);
 }
 
 inline StartingCity::~StartingCity()
 {
 	delete this->player;
+	delete this->map_texture;
 }
 
 void StartingCity::update(const float& dt)
@@ -20,7 +21,6 @@ void StartingCity::update(const float& dt)
 	update_input(dt);
 	update_view();
 	this->player->update(this->mouse_position_view,dt);
-	//printf("\nupdate");
 	if (this->quit)this->end_state();
 
 }
@@ -32,8 +32,8 @@ void StartingCity::update_input(const float& dt)
 	this->try_to_end_state(sf::Keyboard::Escape);
 	
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
-		if (this->change_scene.contains(this->player->position)) {
-			this->manager->add_state(new FirstVillage(this->window,this->manager));
+		if (this->change_scene_to_first_village.contains(this->player->position)) {
+			this->manager->switch_state(new FirstVillage(this->window,this->manager));
 		}
 	}
 }
