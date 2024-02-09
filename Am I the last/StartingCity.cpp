@@ -113,5 +113,6 @@ void StartingCity::try_to_change_state()
 	if (!sf::Keyboard::isKeyPressed(sf::Keyboard::E) && this->change_state)
 		if (this->change_scene_to_first_village.contains(this->player->position)) {
 			this->manager->switch_state(new FirstVillage(this->window, this->manager));
+			this->save_data();
 		}
 }

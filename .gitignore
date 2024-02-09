@@ -362,3 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 /Am I the last/City/StartingCity/data.txt
+/Am I the last/City/FirstVillage/data.txt
