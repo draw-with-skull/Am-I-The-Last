@@ -77,6 +77,7 @@ void Game::create_window()
 	//Scales window and centres it
 	this->window->setSize(window_scale);
 	this->window->setPosition(sf::Vector2i((sf::VideoMode::getDesktopMode().width - window_scale.x)/2, (sf::VideoMode::getDesktopMode().height - window_scale.y)/2 ));
+	this->window->setFramerateLimit(60);
 }
 
 void Game::init_State()
