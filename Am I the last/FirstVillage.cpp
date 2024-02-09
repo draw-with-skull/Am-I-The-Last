@@ -19,10 +19,12 @@ FirstVillage::~FirstVillage()
 
 void FirstVillage::update(const float& dt)
 {
-	//printf("\nvillage");
 	this->update_input(dt);
 	this->update_view();
 	this->player->update(this->mouse_position_view, dt);
+	//if player is moveing don t allow to change state
+	if (this->player->is_moveing)this->change_state = false;
+
 	if (this->quit)this->end_state();
 
 }

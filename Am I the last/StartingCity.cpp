@@ -21,6 +21,8 @@ void StartingCity::update(const float& dt)
 	update_input(dt);
 	update_view();
 	this->player->update(this->mouse_position_view,dt);
+	if (this->player->is_moveing)this->change_state = false;
+
 	if (this->quit)this->end_state();
 
 }
