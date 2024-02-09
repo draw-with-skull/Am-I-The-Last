@@ -30,12 +30,7 @@ void StartingCity::update_input(const float& dt)
 	this->update_mouse_position();
 
 	this->try_to_end_state(sf::Keyboard::Escape);
-	
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
-		if (this->change_scene_to_first_village.contains(this->player->position)) {
-			this->manager->switch_state(new FirstVillage(this->window,this->manager));
-		}
-	}
+	this->try_to_change_state();
 }
 
 void StartingCity::render(sf::RenderTarget* target)
@@ -108,4 +103,15 @@ void StartingCity::save_data()
 	city_data << this->player->position.x<<" ";
 	city_data << this->player->position.y;
 	city_data.close();
+}
+
+void StartingCity::try_to_change_state()
+{
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
+		this->change_state = true;
+	}
+	if (!sf::Keyboard::isKeyPressed(sf::Keyboard::E) && this->change_state)
+		if (this->change_scene_to_first_village.contains(this->player->position)) {
+			this->manager->switch_state(new FirstVillage(this->window, this->manager));
+		}
 }

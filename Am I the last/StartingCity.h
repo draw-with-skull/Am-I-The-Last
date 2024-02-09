@@ -17,7 +17,9 @@ private:
 	void update_view();
 	void import_data();
 	void save_data();
+	void try_to_change_state();
 private:
+	bool change_state = false;
 	Player_top *player;
 	sf::Texture* map_texture;
 	sf::Sprite map;

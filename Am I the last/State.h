@@ -31,7 +31,6 @@ protected:
 	sf::Vector2f mouse_position_view;
 	//ending state 
 	void try_to_end_state(sf::Keyboard::Key key);
-	
 	bool try_to_quit;
 
 public://constructor destructor

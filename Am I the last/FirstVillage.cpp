@@ -29,12 +29,9 @@ void FirstVillage::update(const float& dt)
 
 void FirstVillage::update_input(const float& dt)
 {
+	this->update_mouse_position();
 	this->try_to_end_state(sf::Keyboard::Escape);
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
-		if (this->change_to_starting_city.contains(this->player->position)) {
-			this->manager->switch_state(new StartingCity(this->window, this->manager));
-		}
-	}
+	this->try_to_change_state();
 }
 
 void FirstVillage::render(sf::RenderTarget* target)
@@ -104,4 +101,16 @@ void FirstVillage::save_data()
 	city_data << this->player->position.x << " ";
 	city_data << this->player->position.y;
 	city_data.close();
+}
+
+void FirstVillage::try_to_change_state()
+{
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
+		this->change_state = true;
+	}
+	if (!sf::Keyboard::isKeyPressed(sf::Keyboard::E) && this->change_state) {
+		if (this->change_to_starting_city.contains(this->player->position)) {
+			this->manager->switch_state(new StartingCity(this->window, this->manager));
+		}
+	}
 }
