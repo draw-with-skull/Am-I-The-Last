@@ -1,12 +1,5 @@
 #include "State.h"
 
-void State::update(const float &dt)
-{
-}
-
-void State::update_input(const float & dt)
-{
-}
 
 void State::update_mouse_position()
 {

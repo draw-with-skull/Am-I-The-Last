@@ -27,6 +27,20 @@ void FirstVillage::update(const float& dt)
 
 	if (this->quit)this->end_state();
 
+	//determines if it should show the change state icon
+	if (!this->player->is_moveing) {
+		if (this->change_to_starting_city.contains(this->player->position)) {
+			this->change_state_icon.setPosition(this->change_to_starting_city.getPosition());
+			this->draw_change_state_icon = true;
+		}
+		else {
+			this->draw_change_state_icon = false;
+		}
+	}
+	else {
+		this->draw_change_state_icon = false;
+	}
+
 }
 
 void FirstVillage::update_input(const float& dt)
@@ -44,6 +58,9 @@ void FirstVillage::render(sf::RenderTarget* target)
 
 	target->draw(this->map);
 	player->render(target);
+	if (draw_change_state_icon) {
+		target->draw(this->change_state_icon);
+	}
 }
 
 void FirstVillage::end_state()
@@ -57,8 +74,14 @@ void FirstVillage::end_state()
 void FirstVillage::import_assets()
 {
 	this->map_texture = new sf::Texture;
+	this->change_state_texture = new sf::Texture;
 	this->map_texture->loadFromFile("Textures/Maps/2.png");
+	this->change_state_texture->loadFromFile("Textures/Buttons/Enter.png");
 	this->map.setTexture(*this->map_texture);
+	this->change_state_icon.setTexture(*this->change_state_texture);
+
+	this->change_state_icon.setOrigin(this->change_state_icon.getPosition().x / 2, this->change_state_icon.getPosition().y / 2);
+
 }
 
 void FirstVillage::update_view()

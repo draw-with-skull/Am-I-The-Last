@@ -8,6 +8,7 @@ StartingCity::StartingCity(sf::RenderWindow* window,StateManager* manager ):Stat
 	this->player = new Player_top();
 	this->import_data();
 	this->change_scene_to_first_village = sf::FloatRect(0,190,50,70);
+	this->draw_change_state_icon = false;
 }
 
 inline StartingCity::~StartingCity()
@@ -20,11 +21,25 @@ void StartingCity::update(const float& dt)
 {
 	update_input(dt);
 	update_view();
+	
 	this->player->update(this->mouse_position_view,dt);
+
 	if (this->player->is_moveing)this->change_state = false;
-
 	if (this->quit)this->end_state();
-
+	
+	//determines if it should show the change state icon
+	if (!this->player->is_moveing) {
+		if (this->change_scene_to_first_village.contains(this->player->position)) {
+			this->change_state_icon.setPosition(this->change_scene_to_first_village.getPosition());
+			this->draw_change_state_icon = true;
+		}
+		else {
+			this->draw_change_state_icon = false;
+		}
+	}
+	else {
+		this->draw_change_state_icon = false;
+	}
 }
 
 void StartingCity::update_input(const float& dt)
@@ -40,9 +55,11 @@ void StartingCity::render(sf::RenderTarget* target)
 	if (!target)
 		target = this->window;
 	target->setView(this->view);
-
 	target->draw(this->map);
 	player->render(target);
+	if (draw_change_state_icon) {
+		target->draw(this->change_state_icon);
+	}
 	//printf("\nrender");
 }
 
@@ -57,8 +74,13 @@ void StartingCity::end_state()
 void StartingCity::import_assets()
 {
 	this->map_texture = new sf::Texture;
+	this->change_state_texture = new sf::Texture;
 	this->map_texture->loadFromFile("Textures/Maps/1.png");
+	this->change_state_texture->loadFromFile("Textures/Buttons/Enter.png");
 	this->map.setTexture(*this->map_texture);
+	this->change_state_icon.setTexture(*this->change_state_texture);
+
+	this->change_state_icon.setOrigin(this->change_state_icon.getPosition().x / 2, this->change_state_icon.getPosition().y / 2);
 }
 
 void StartingCity::update_view()

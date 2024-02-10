@@ -100,7 +100,7 @@
       <Filter>SRC\Managers</Filter>
     </ClCompile>
     <ClCompile Include="FirstVillage.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>SRC\Citys\FirstVillage</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -141,7 +141,7 @@
       <Filter>SRC\Managers</Filter>
     </ClInclude>
     <ClInclude Include="FirstVillage.h">
-      <Filter>Header Files</Filter>
+      <Filter>SRC\Citys\FirstVillage</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

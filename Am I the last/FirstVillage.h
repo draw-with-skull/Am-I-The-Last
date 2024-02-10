@@ -23,10 +23,10 @@ private:
 	void try_to_change_state();
 
 private:
-	bool change_state = false;
+	bool change_state = false, draw_change_state_icon;
 	Player_top* player;
-	sf::Texture* map_texture;
-	sf::Sprite map;
+	sf::Texture* map_texture, * change_state_texture;
+	sf::Sprite map, change_state_icon;
 	sf::View view;
 	sf::FloatRect change_to_starting_city;
 	const sf::Vector2f view_size = sf::Vector2f(480, 270);
