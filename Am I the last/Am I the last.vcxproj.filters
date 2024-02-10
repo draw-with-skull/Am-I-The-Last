@@ -102,6 +102,9 @@
     <ClCompile Include="FirstVillage.cpp">
       <Filter>SRC\Citys\FirstVillage</Filter>
     </ClCompile>
+    <ClCompile Include="AssetImporter.cpp">
+      <Filter>SRC\Util</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -142,6 +145,9 @@
     </ClInclude>
     <ClInclude Include="FirstVillage.h">
       <Filter>SRC\Citys\FirstVillage</Filter>
+    </ClInclude>
+    <ClInclude Include="AssetImporter.h">
+      <Filter>SRC\Util</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
