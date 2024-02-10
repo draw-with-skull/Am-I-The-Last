@@ -73,10 +73,9 @@ void StartingCity::end_state()
 
 void StartingCity::import_assets()
 {
-	this->map_texture = new sf::Texture;
-	this->change_state_texture = new sf::Texture;
-	this->map_texture->loadFromFile("Textures/Maps/1.png");
-	this->change_state_texture->loadFromFile("Textures/Buttons/Enter.png");
+	this->map_texture = AssetImporter::get_texture(AssetImporter::CITY_MAP, "1");
+	this->change_state_texture = AssetImporter::get_texture(AssetImporter::BUTTON, "Enter");
+
 	this->map.setTexture(*this->map_texture);
 	this->change_state_icon.setTexture(*this->change_state_texture);
 }
