@@ -79,8 +79,6 @@ void StartingCity::import_assets()
 	this->change_state_texture->loadFromFile("Textures/Buttons/Enter.png");
 	this->map.setTexture(*this->map_texture);
 	this->change_state_icon.setTexture(*this->change_state_texture);
-
-	this->change_state_icon.setOrigin(this->change_state_icon.getPosition().x / 2, this->change_state_icon.getPosition().y / 2);
 }
 
 void StartingCity::update_view()
