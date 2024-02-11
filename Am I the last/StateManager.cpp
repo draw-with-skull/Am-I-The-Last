@@ -24,6 +24,14 @@ void StateManager::switch_state(State *state)
 	this->state_to_change = state;
 }
 
+void StateManager::save_current_state(STATE_NAME name)
+{
+	std::ofstream stream;
+	stream.open("Settings/LastState.txt", std::ofstream::out | std::ofstream::trunc);
+	stream << name;
+	stream.close();
+}
+
   State* StateManager::get_state()
 {
 	//remove state

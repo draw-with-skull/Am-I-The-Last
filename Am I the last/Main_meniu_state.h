@@ -1,6 +1,7 @@
 #pragma once
 #include "Button.h"
 #include "StartingCity.h"
+#include "FirstVillage.h"
 #include "Settings_meniu_state.h"
 #include "StateManager.h"
 class Main_meniu_state :
@@ -19,6 +20,7 @@ public://variables
 private://functions
 	void init_buttons();
 	void import_textures();
+	void init_state();
 private://variables
 	sf::Sprite background;
 	sf::Font game_font;

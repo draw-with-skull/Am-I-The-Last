@@ -20,8 +20,7 @@ void Main_meniu_state::update_buttons()
 	//buttons funtionality
 	if (this->buttons["BUTTON_START"]->is_pressed())
 	{
-
-		this->manager->add_state(new StartingCity(this->window,this->manager));
+		this->init_state();
 	}
 
 	if (this->buttons["BUTTON_SETTINGS"]->is_pressed())
@@ -75,6 +74,35 @@ void Main_meniu_state::import_textures()
 	this->background_texture = new sf::Texture;
 	this->background_texture->loadFromFile("Textures/Splash_Art/start_meniu_Artwork.png");
 	this->background.setTexture(*background_texture);
+}
+
+void Main_meniu_state::init_state()
+{
+	std::ifstream stream;
+	StateManager::STATE_NAME state_name;
+	int value;
+	//reads value from file and cast it do the enum 
+	stream.open("Settings/LastState.txt");
+	stream >> value;
+	state_name = static_cast<StateManager::STATE_NAME>(value);
+
+
+	State* state{};
+	switch (state_name) {
+		case StateManager::STARTING_CITY: {
+			state = new StartingCity(this->window, this->manager);
+		}break;
+		case StateManager::FIRST_VILLAGE: {
+			state = new FirstVillage(this->window, this->manager);
+		}break;
+			//case StateManager:: :{}break;
+		default: {
+			state = new StartingCity(this->window, this->manager);
+		}break;
+	}
+
+	//new Main_meniu_state(this->window, this->state_manager)
+	this->manager->add_state(state);
 }
 
 Main_meniu_state::Main_meniu_state(sf::RenderWindow* window, StateManager* manager)

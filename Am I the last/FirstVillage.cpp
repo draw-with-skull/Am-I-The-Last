@@ -69,6 +69,7 @@ void FirstVillage::end_state()
 	this->view.setCenter(this->view_size / 2.f);
 	this->window->setView(this->view);
 	this->save_data();
+	this->manager->save_current_state(StateManager::FIRST_VILLAGE);
 }
 
 void FirstVillage::import_assets()
