@@ -13,7 +13,7 @@ void StateManager::add_state(State *state)
 
 void StateManager::revome_state()
 {
-	if (this->states->size() > 1) {
+	if (this->states->size() > 0) {
 		delete this->states->top();
 		this->states->pop();
 	}
@@ -35,6 +35,9 @@ void StateManager::save_current_state(STATE_NAME name)
   State* StateManager::get_state()
 {
 	//remove state
+	if (this->states->empty()) {
+		return nullptr;
+	}
 	if (this->states->top()->quit) {
 		this->revome_state();
 	}
