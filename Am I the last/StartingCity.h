@@ -1,8 +1,12 @@
 #pragma once
+
 #include"State.h"
 #include"Player_top.h"
 #include"StateManager.h"
 #include"AssetImporter.h"
+#include "BuildingBounds.h"
+#include "FirstVillage.h"
+
 class StartingCity:public State
 {
 public:
@@ -16,9 +20,12 @@ public:
 	virtual void import_assets() override;
 private:
 	void update_view();
+	void update_buildings();
 	void import_data();
 	void save_data();
 	void try_to_change_state();
+	void init_buildings();
+
 private:
 	bool change_state = false,draw_change_state_icon;
 	Player_top *player;
@@ -26,5 +33,6 @@ private:
 	sf::Sprite map,change_state_icon;
 	sf::View view;
 	sf::FloatRect change_scene_to_first_village;
+	std::vector<BuildingBounds> building_bounds;
 	const sf::Vector2f view_size = sf::Vector2f(480, 270);
 };

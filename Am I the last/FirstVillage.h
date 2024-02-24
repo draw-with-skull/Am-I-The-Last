@@ -3,6 +3,9 @@
 #include "State.h"
 #include "SFML/System.hpp"
 #include "StartingCity.h"
+#include "Building.h"
+#include "BuildingBounds.h"
+#include "Math.h"
 class FirstVillage:public State
 {
 public:
@@ -18,9 +21,11 @@ public:
 private:
 
 	void update_view();
+	void update_buildings();
 	void importa_data();
 	void save_data();
 	void try_to_change_state();
+	void init_buildings();
 
 private:
 	bool change_state = false, draw_change_state_icon;
@@ -29,6 +34,7 @@ private:
 	sf::Sprite map, change_state_icon;
 	sf::View view;
 	sf::FloatRect change_to_starting_city;
+	std::vector<BuildingBounds> building_bounds;
 	const sf::Vector2f view_size = sf::Vector2f(480, 270);
 };
 

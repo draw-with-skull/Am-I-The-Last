@@ -1,5 +1,5 @@
 #include "StartingCity.h"
-#include "FirstVillage.h"
+
 StartingCity::StartingCity(sf::RenderWindow* window,StateManager* manager ):State(window,manager)
 {
 	printf("\n StartingCity");
@@ -8,6 +8,7 @@ StartingCity::StartingCity(sf::RenderWindow* window,StateManager* manager ):Stat
 	this->player = new Player_top();
 	this->import_data();
 	this->change_scene_to_first_village = sf::FloatRect(0,190,50,70);
+	this->init_buildings();
 	this->draw_change_state_icon = false;
 }
 
@@ -25,6 +26,8 @@ void StartingCity::update(const float& dt)
 	this->player->update(this->mouse_position_view,dt);
 
 	if (this->player->is_moveing)this->change_state = false;
+
+	this->update_buildings();
 	if (this->quit)this->end_state();
 	
 	//determines if it should show the change state icon
@@ -104,6 +107,16 @@ void StartingCity::update_view()
 	
 }
 
+void StartingCity::update_buildings()
+{
+	for (const BuildingBounds& building_bound : this->building_bounds) {
+		if (Math::PointInsidePoligon(player->position, building_bound.polygon)) {
+			printf("building\n");
+		}
+
+	}
+}
+
 void StartingCity::import_data()
 {
 	//import player position
@@ -137,4 +150,17 @@ void StartingCity::try_to_change_state()
 			this->manager->switch_state(new FirstVillage(this->window, this->manager));
 			this->save_data();
 		}
+}
+
+void StartingCity::init_buildings()
+{
+	this->building_bounds.push_back({ Building::HOUSE_0,
+	{
+	{166,159},
+	{195,173},
+	{241,151},
+	{241,136},
+	{224,98},
+	{180,120},
+	} });
 }

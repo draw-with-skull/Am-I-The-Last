@@ -58,6 +58,9 @@
     <Filter Include="SRC\Citys\FirstVillage">
       <UniqueIdentifier>{ec5fbc6e-1d05-423b-93f3-0bb9ef85e2c3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="SRC\Structs">
+      <UniqueIdentifier>{e4b5ac25-f58e-45e4-a0fb-085c543b9e68}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -65,9 +68,6 @@
     </ClCompile>
     <ClCompile Include="Game.cpp">
       <Filter>SRC\Game</Filter>
-    </ClCompile>
-    <ClCompile Include="State.cpp">
-      <Filter>SRC\States</Filter>
     </ClCompile>
     <ClCompile Include="Entity.cpp">
       <Filter>SRC\Entety</Filter>
@@ -87,9 +87,6 @@
     <ClCompile Include="Player_top.cpp">
       <Filter>SRC\Entety</Filter>
     </ClCompile>
-    <ClCompile Include="Building.cpp">
-      <Filter>SRC\Entety</Filter>
-    </ClCompile>
     <ClCompile Include="StartingCity.cpp">
       <Filter>SRC\Citys\StartingCity</Filter>
     </ClCompile>
@@ -105,13 +102,16 @@
     <ClCompile Include="AssetImporter.cpp">
       <Filter>SRC\Util</Filter>
     </ClCompile>
+    <ClCompile Include="Building.cpp">
+      <Filter>SRC\States</Filter>
+    </ClCompile>
+    <ClCompile Include="State.cpp">
+      <Filter>SRC\Entety</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
       <Filter>SRC\Game</Filter>
-    </ClInclude>
-    <ClInclude Include="State.h">
-      <Filter>SRC\States</Filter>
     </ClInclude>
     <ClInclude Include="Entity.h">
       <Filter>SRC\Entety</Filter>
@@ -131,9 +131,6 @@
     <ClInclude Include="Player_top.h">
       <Filter>SRC\Entety</Filter>
     </ClInclude>
-    <ClInclude Include="Building.h">
-      <Filter>SRC\Entety</Filter>
-    </ClInclude>
     <ClInclude Include="StartingCity.h">
       <Filter>SRC\Citys\StartingCity</Filter>
     </ClInclude>
@@ -148,6 +145,15 @@
     </ClInclude>
     <ClInclude Include="AssetImporter.h">
       <Filter>SRC\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="Building.h">
+      <Filter>SRC\States</Filter>
+    </ClInclude>
+    <ClInclude Include="State.h">
+      <Filter>SRC\Entety</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildingBounds.h">
+      <Filter>SRC\Structs</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +177,9 @@
     </Text>
     <Text Include="Settings\World_data.txt">
       <Filter>Data</Filter>
+    </Text>
+    <Text Include="City\FirstVillage\data.txt">
+      <Filter>Data\StartingCity</Filter>
     </Text>
   </ItemGroup>
   <ItemGroup>

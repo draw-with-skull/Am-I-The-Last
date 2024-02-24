@@ -38,6 +38,7 @@
   <ItemGroup>
     <ClInclude Include="AssetImporter.h" />
     <ClInclude Include="Building.h" />
+    <ClInclude Include="BuildingBounds.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="FirstVillage.h" />
@@ -52,6 +53,7 @@
     <ClInclude Include="StateManager.h" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="City\FirstVillage\data.txt" />
     <Text Include="Settings\Game_state_keybinds.txt" />
     <Text Include="Settings\Game_state_settings.txt" />
     <Text Include="Settings\LastState.txt" />

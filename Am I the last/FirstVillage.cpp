@@ -8,6 +8,8 @@ FirstVillage::FirstVillage(sf::RenderWindow* window, StateManager* manager)
 	this->view.setSize(this->view_size);
 	this->player = new Player_top();
 	this->importa_data();
+	this->init_buildings();
+
 	this->change_to_starting_city = sf::FloatRect(460,220,50,70);
 }
 
@@ -24,6 +26,8 @@ void FirstVillage::update(const float& dt)
 	this->player->update(this->mouse_position_view, dt);
 	//if player is moveing don t allow to change state
 	if (this->player->is_moveing)this->change_state = false;
+
+	this->update_buildings();
 
 	if (this->quit)this->end_state();
 
@@ -103,6 +107,16 @@ void FirstVillage::update_view()
 	this->view.setCenter(view_center);
 }
 
+void FirstVillage::update_buildings()
+{
+	for (const BuildingBounds& building_bound: this->building_bounds) {
+		if (Math::PointInsidePoligon(player->position, building_bound.polygon)) {
+			printf("building\n");
+		}
+
+	}
+}
+
 void FirstVillage::importa_data()
 {
 	//import player position
@@ -137,4 +151,17 @@ void FirstVillage::try_to_change_state()
 			this->save_data();
 		}
 	}
+}
+
+void FirstVillage::init_buildings()
+{
+	this->building_bounds.push_back({ Building::HOUSE_0,
+		{
+		{166,159},
+		{195,173},
+		{241,151},
+		{241,136},
+		{224,98},
+		{180,120},
+		}});
 }

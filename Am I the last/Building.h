@@ -1,29 +1,43 @@
 #pragma once
-#include <SFML/System/Vector2.hpp>
-#include <fstream>
-class Building
-{	
-public://funtions
-	const bool collision(sf::Vector2f player_position);
-	const bool is_close(sf::Vector2f player_position);
-public://variables
+#include <vector>
+#include <string>
+#include "State.h"
+#include "StateManager.h"
+class Building:public State
+{
+public:
+	enum INTERIOR
+	{
+		HOUSE_0,
+		HOUSE_1,
+		HOUSE_2,
+		HOUSE_3,
+		HOUSE_4,
+		HOUSE_5,
+		HOUSE_6,
+		HOUSE_7,
+		HOUSE_8,
+		HOUSE_9,
+		WATCH_TOWER,
 
-private://funtions
-	void init_building_data(std::ifstream& building_data);
-	void get_centre();
-	void get_size();
-	float get_radius();
-
-	float distance(sf::Vector2f point_1, sf::Vector2f point_2);
-private://varialbes
-	sf::Vector2f A,B,C,D,centre;
-
-	unsigned short building_id;
-	float building_size=0,building_radius;
-	bool looted = false;
-
+	};
 public://constructor destructor
-	Building(std::ifstream &building_data);
+	Building(INTERIOR type, std::string data_file_name, sf::RenderWindow* window, StateManager* manager);
 	virtual ~Building();
+
+	// Inherited via State
+	virtual void update(const float& dt) override;
+	virtual void update_input(const float& dt) override;
+	virtual void render(sf::RenderTarget* target) override;
+	virtual void end_state() override;
+	virtual void import_assets() override;
+
+private:
+	void import_data(std::string file_name);
+	void get_type(INTERIOR type);
+private:
+	sf::Texture* interior_texture;
+	sf::Sprite* interior;
+
 };
 
