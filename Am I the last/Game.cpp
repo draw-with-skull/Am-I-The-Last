@@ -49,7 +49,9 @@ void Game::render()
 	this->window->clear();
 
 	//rendering
-	this->state_manager->get_state()->render();
+	if (this->state_manager->get_state()) {
+		this->state_manager->get_state()->render();
+	}
 	//display
 	this->window->display();
 }
