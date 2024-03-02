@@ -15,8 +15,6 @@ FirstVillage::FirstVillage(sf::RenderWindow* window, StateManager* manager)
 
 FirstVillage::~FirstVillage()
 {
-	delete this->player;
-	delete this->map_texture;
 }
 
 void FirstVillage::update(const float& dt)
@@ -30,8 +28,6 @@ void FirstVillage::update(const float& dt)
 	this->update_buildings();
 
 	if (this->quit)this->end_state();
-
-
 
 }
 
