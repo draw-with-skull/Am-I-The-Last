@@ -28,20 +28,7 @@ void StartingCity::update(const float& dt)
 
 	this->update_buildings();
 	if (this->quit)this->end_state();
-	
-	//determines if it should show the change state icon
-	/*if (!this->player->is_moveing) {
-		if (this->change_scene_to_first_village.contains(this->player->position)) {
-			this->change_state_icon.setPosition(this->change_scene_to_first_village.getPosition());
-			this->draw_change_state_icon = true;
-		}
-		else {
-			this->draw_change_state_icon = false;
-		}
-	}
-	else {
-		this->draw_change_state_icon = false;
-	}*/
+
 }
 
 void StartingCity::update_input(const float& dt)
@@ -85,12 +72,15 @@ void StartingCity::import_assets()
 
 void StartingCity::update_buildings()
 {
+	if (player->is_moveing) {
+		return;
+	}
 	for (const BuildingBounds& building_bound : this->building_bounds) {
 		if (Math::PointInsidePoligon(player->position, building_bound.polygon)) {
-			printf("building %i\n", building_bound.type);
-			//implement change state to building
+			if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
+				this->manager->add_state(new Building(building_bound.type, this->window, this->manager));
+			}
 		}
-
 	}
 }
 
@@ -129,7 +119,6 @@ void StartingCity::try_to_change_state()
 			this->save_data();
 		}
 }
-
 
 void StartingCity::init_buildings()
 {

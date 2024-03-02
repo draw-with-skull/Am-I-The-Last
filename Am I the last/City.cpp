@@ -10,7 +10,7 @@ City::~City()
 void City::update_view(const sf::Vector2f position)
 {
 
-	sf::Vector2f view_center = this->player->position;
+	sf::Vector2f view_center = position;
 	sf::Vector2f map_size = sf::Vector2f(map_texture->getSize());
 
 	//set bounds on x

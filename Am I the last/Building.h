@@ -3,6 +3,7 @@
 #include <string>
 #include "State.h"
 #include "StateManager.h"
+#include "AssetImporter.h"
 class Building:public State
 {
 public:
@@ -22,7 +23,7 @@ public:
 
 	};
 public://constructor destructor
-	Building(INTERIOR type, std::string data_file_name, sf::RenderWindow* window, StateManager* manager);
+	Building(INTERIOR type, sf::RenderWindow* window, StateManager* manager);
 	virtual ~Building();
 
 	// Inherited via State
@@ -33,11 +34,16 @@ public://constructor destructor
 	virtual void import_assets() override;
 
 private:
-	void import_data(std::string file_name);
-	void get_type(INTERIOR type);
+	void import_data();
+	void update_view();
+	std::string get_type();
 private:
 	sf::Texture* interior_texture;
 	sf::Sprite* interior;
+	sf::View view;
+	INTERIOR type;
+
+	const sf::Vector2f view_size = sf::Vector2f(240, 135);
 
 };
 

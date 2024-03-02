@@ -8,6 +8,7 @@ public:
 		CITY_MAP,
 		BUTTON,
 		ENTITY,
+		BUILDING,
 		SPLASH_ART
 	};
 private:
