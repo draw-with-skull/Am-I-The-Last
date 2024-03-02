@@ -15,25 +15,33 @@ bool Math::PointInsidePoligon(sf::Vector2f point, std::vector<sf::Vector2f> poly
 		return false;
 	}
 
-	bool inside = false;
-	sf::Vector2f p1 = polygon[0],p2;
-	unsigned int vertex_count= polygon.size();
+    int num_vertices = polygon.size();
+    double x = point.x, y = point.y;
+    bool inside = false;
 
-	for (int i = 1; i < vertex_count; i++) {
-		p2 = polygon[i%vertex_count];
+    sf::Vector2f p1 = polygon[0], p2;
 
-		if (point.y > std::min(p1.y, p2.y)) {
-			if (point.y <= std::max(p1.y, p2.y)) {
-				if (point.x <= std::max(p1.x,p2.x)) {
-					float intersection = (point.y - p1.y) * (p2.x - p1.x) / (p2.y - p1.y) + p1.x;
+    for (int i = 1; i <= num_vertices; i++) {
+        p2 = polygon[i % num_vertices];
 
-					if (p1.x == p2.x || point.x <= intersection) {
-						inside = !inside;
-					}
-				}
-			}
-		}
-		p1 = p2;
-	}
-	return inside;
+        if (y > std::min(p1.y, p2.y)) {
+            if (y <= std::max(p1.y, p2.y)) {
+                if (x <= std::max(p1.x, p2.x)) {
+                    double x_intersection
+                        = (y - p1.y) * (p2.x - p1.x)
+                        / (p2.y - p1.y)
+                        + p1.x;
+
+                    if (p1.x == p2.x
+                        || x <= x_intersection) {
+                        inside = !inside;
+                    }
+                }
+            }
+        }
+
+        p1 = p2;
+    }
+
+    return inside;
 }
