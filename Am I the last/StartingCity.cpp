@@ -14,14 +14,13 @@ StartingCity::StartingCity(sf::RenderWindow* window,StateManager* manager ):Stat
 
 inline StartingCity::~StartingCity()
 {
-	delete this->player;
-	delete this->map_texture;
+
 }
 
 void StartingCity::update(const float& dt)
 {
 	update_input(dt);
-	update_view();
+	update_view(this->player->position);
 	
 	this->player->update(this->mouse_position_view,dt);
 
@@ -31,7 +30,7 @@ void StartingCity::update(const float& dt)
 	if (this->quit)this->end_state();
 	
 	//determines if it should show the change state icon
-	if (!this->player->is_moveing) {
+	/*if (!this->player->is_moveing) {
 		if (this->change_scene_to_first_village.contains(this->player->position)) {
 			this->change_state_icon.setPosition(this->change_scene_to_first_village.getPosition());
 			this->draw_change_state_icon = true;
@@ -42,7 +41,7 @@ void StartingCity::update(const float& dt)
 	}
 	else {
 		this->draw_change_state_icon = false;
-	}
+	}*/
 }
 
 void StartingCity::update_input(const float& dt)
@@ -84,38 +83,17 @@ void StartingCity::import_assets()
 	this->change_state_icon.setTexture(*this->change_state_texture);
 }
 
-void StartingCity::update_view()
-{
-
-	sf::Vector2f view_center = this->player->position;
-	sf::Vector2f map_size = sf::Vector2f(map_texture->getSize());
-
-	//set bounds on x
-	if (view_center.x < this->view_size.x / 2)//left
-		view_center.x = this->view_size.x/2;
-	if (view_center.x > (map_size.x - (this->view_size.x / 2)))//right
-		view_center.x= map_size.x-view_size.x/2;
-
-	//set bounds on y
-	if (view_center.y < this->view_size.y / 2)//top
-		view_center.y = this->view_size.y / 2;
-	if(view_center.y>(map_size.y-(this->view_size.y/2)))//bottom
-		view_center.y = map_size.y-view_size.y/2;
-
-
-	this->view.setCenter(view_center);
-	
-}
-
 void StartingCity::update_buildings()
 {
 	for (const BuildingBounds& building_bound : this->building_bounds) {
 		if (Math::PointInsidePoligon(player->position, building_bound.polygon)) {
-			printf("building\n");
+			printf("building %i\n", building_bound.type);
+			//implement change state to building
 		}
 
 	}
 }
+
 
 void StartingCity::import_data()
 {
@@ -152,6 +130,7 @@ void StartingCity::try_to_change_state()
 		}
 }
 
+
 void StartingCity::init_buildings()
 {
 	this->building_bounds.push_back({ Building::HOUSE_0,
@@ -162,5 +141,14 @@ void StartingCity::init_buildings()
 	{241,136},
 	{224,98},
 	{180,120},
+	} });
+	this->building_bounds.push_back({ Building::WATCH_TOWER,
+	{
+	{261,224},
+	{323,253},
+	{384,223},
+	{353,126},
+	{322,95},
+	{291,124}
 	} });
 }

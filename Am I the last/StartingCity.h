@@ -1,13 +1,14 @@
 #pragma once
 
 #include"State.h"
-#include"Player_top.h"
 #include"StateManager.h"
 #include"AssetImporter.h"
-#include "BuildingBounds.h"
+#include "City.h"
 #include "FirstVillage.h"
 
-class StartingCity:public State
+#include "Debug.h"
+
+class StartingCity:public State,public City
 {
 public:
 	StartingCity(sf::RenderWindow* window,StateManager* manager);
@@ -19,20 +20,13 @@ public:
 	virtual void end_state() override;
 	virtual void import_assets() override;
 private:
-	void update_view();
-	void update_buildings();
-	void import_data();
-	void save_data();
-	void try_to_change_state();
-	void init_buildings();
 
+	// Inherited via City
+	virtual void update_buildings() override;
+	virtual void init_buildings() override;
+	virtual void try_to_change_state() override;
+	virtual void import_data()override;
+	virtual void save_data()override;
 private:
-	bool change_state = false,draw_change_state_icon;
-	Player_top *player;
-	sf::Texture* map_texture,*change_state_texture;
-	sf::Sprite map,change_state_icon;
-	sf::View view;
 	sf::FloatRect change_scene_to_first_village;
-	std::vector<BuildingBounds> building_bounds;
-	const sf::Vector2f view_size = sf::Vector2f(480, 270);
 };

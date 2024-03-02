@@ -22,6 +22,8 @@
     <ClCompile Include="AssetImporter.cpp" />
     <ClCompile Include="Building.cpp" />
     <ClCompile Include="Button.cpp" />
+    <ClCompile Include="City.cpp" />
+    <ClCompile Include="Debug.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="FirstVillage.cpp" />
     <ClCompile Include="Game.cpp" />
@@ -40,6 +42,8 @@
     <ClInclude Include="Building.h" />
     <ClInclude Include="BuildingBounds.h" />
     <ClInclude Include="Button.h" />
+    <ClInclude Include="City.h" />
+    <ClInclude Include="Debug.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="FirstVillage.h" />
     <ClInclude Include="Game.h" />

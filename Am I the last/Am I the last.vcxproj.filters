@@ -108,6 +108,12 @@
     <ClCompile Include="State.cpp">
       <Filter>SRC\Entety</Filter>
     </ClCompile>
+    <ClCompile Include="Debug.cpp">
+      <Filter>SRC\Util</Filter>
+    </ClCompile>
+    <ClCompile Include="City.cpp">
+      <Filter>SRC\Entety</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -154,6 +160,12 @@
     </ClInclude>
     <ClInclude Include="BuildingBounds.h">
       <Filter>SRC\Structs</Filter>
+    </ClInclude>
+    <ClInclude Include="Debug.h">
+      <Filter>SRC\Util</Filter>
+    </ClInclude>
+    <ClInclude Include="City.h">
+      <Filter>SRC\Entety</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
