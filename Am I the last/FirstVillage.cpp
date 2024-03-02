@@ -31,19 +31,7 @@ void FirstVillage::update(const float& dt)
 
 	if (this->quit)this->end_state();
 
-	//determines if it should show the change state icon
-	//if (!this->player->is_moveing) {
-	//	if (this->change_to_starting_city.contains(this->player->position)) {
-	//		this->change_state_icon.setPosition(this->change_to_starting_city.getPosition());
-	//		this->draw_change_state_icon = true;
-	//	}
-	//	else {
-	//		this->draw_change_state_icon = false;
-	//	}
-	//}
-	//else {
-	//	this->draw_change_state_icon = false;
-	//}
+
 
 }
 
