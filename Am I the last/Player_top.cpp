@@ -16,7 +16,6 @@ void Player_top::update( sf::Vector2f mouse_position,const float &dt)
 	{
 		sprite.move(move*dt*speed);
 		position = sprite.getPosition();
-		//this->calculate_diraction(destination);
 	}
 	else
 		this->is_moveing = false;

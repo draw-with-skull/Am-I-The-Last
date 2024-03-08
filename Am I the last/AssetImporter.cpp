@@ -8,7 +8,7 @@ sf::Texture* AssetImporter::get_texture(ASSET_TYPE type, std::string name)
 
     sf::Texture* texture = new sf::Texture;
     if (!texture->loadFromFile(path)) {
-        printf("error");
+        printf("\nerror to load texture \n");
     }
 
     return texture;

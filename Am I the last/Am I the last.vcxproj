@@ -19,6 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Animation.cpp" />
+    <ClCompile Include="AnimationManager.cpp" />
     <ClCompile Include="AssetImporter.cpp" />
     <ClCompile Include="Building.cpp" />
     <ClCompile Include="Button.cpp" />
@@ -30,6 +32,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Main_meniu_state.cpp" />
     <ClCompile Include="Math.cpp" />
+    <ClCompile Include="PlayerSide.cpp" />
     <ClCompile Include="Player_top.cpp" />
     <ClCompile Include="Resolution_meniu_state.cpp" />
     <ClCompile Include="Settings_meniu_state.cpp" />
@@ -38,6 +41,8 @@
     <ClCompile Include="StateManager.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Animation.h" />
+    <ClInclude Include="AnimationManager.h" />
     <ClInclude Include="AssetImporter.h" />
     <ClInclude Include="Building.h" />
     <ClInclude Include="BuildingBounds.h" />
@@ -49,6 +54,7 @@
     <ClInclude Include="Game.h" />
     <ClInclude Include="Main_meniu_state.h" />
     <ClInclude Include="Math.h" />
+    <ClInclude Include="PlayerSide.h" />
     <ClInclude Include="Player_top.h" />
     <ClInclude Include="Resolution_meniu_state.h" />
     <ClInclude Include="Settings_meniu_state.h" />

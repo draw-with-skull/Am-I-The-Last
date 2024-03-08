@@ -114,6 +114,15 @@
     <ClCompile Include="City.cpp">
       <Filter>SRC\Entety</Filter>
     </ClCompile>
+    <ClCompile Include="PlayerSide.cpp">
+      <Filter>SRC\Entety</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationManager.cpp">
+      <Filter>SRC\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Animation.cpp">
+      <Filter>SRC\Entety</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
@@ -165,6 +174,15 @@
       <Filter>SRC\Util</Filter>
     </ClInclude>
     <ClInclude Include="City.h">
+      <Filter>SRC\Entety</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerSide.h">
+      <Filter>SRC\Entety</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationManager.h">
+      <Filter>SRC\Managers</Filter>
+    </ClInclude>
+    <ClInclude Include="Animation.h">
       <Filter>SRC\Entety</Filter>
     </ClInclude>
   </ItemGroup>
