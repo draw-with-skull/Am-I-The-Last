@@ -122,7 +122,7 @@ void StartingCity::try_to_change_state()
 
 void StartingCity::init_buildings()
 {
-	this->building_bounds.push_back({ Building::HOUSE_0,
+	this->building_bounds.push_back({ Building::INTERIOR::HOUSE_0,
 	{
 	{166,159},
 	{195,173},
@@ -131,7 +131,7 @@ void StartingCity::init_buildings()
 	{224,98},
 	{180,120},
 	} });
-	this->building_bounds.push_back({ Building::WATCH_TOWER,
+	this->building_bounds.push_back({ Building::INTERIOR::WATCH_TOWER,
 	{
 	{261,224},
 	{323,253},
