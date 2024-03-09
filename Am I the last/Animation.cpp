@@ -1,6 +1,6 @@
 #include "Animation.h"
 
-Animation::Animation(sf::Texture *sprite_sheet, unsigned int frame_w, unsigned int frame_h, unsigned short frame_count, float frame_time, unsigned int frame_row)
+Animation::Animation(sf::Texture* sprite_sheet, unsigned int frame_w, unsigned int frame_h, unsigned short frame_count, float frame_time, unsigned int frame_row)
 {
 	//init data about the frame
 	this->frame_wigth = frame_w;
@@ -21,7 +21,7 @@ Animation::Animation(sf::Texture *sprite_sheet, unsigned int frame_w, unsigned i
 void Animation::update(const sf::Vector2f position, const float& dt)
 {
 	if (!this->active) { return; }
-	
+
 	this->frame_time_left -= dt;
 
 	if (this->frame_time_left < 0) {
@@ -31,10 +31,9 @@ void Animation::update(const sf::Vector2f position, const float& dt)
 	}
 	this->sprite.setTextureRect(this->source_rect);
 	this->sprite.setPosition(position);
-	printf("%i  \n", current_frame);
 }
 
-void Animation::render( sf::RenderTarget* window)
+void Animation::render(sf::RenderTarget* window)
 {
 	window->draw(this->sprite);
 }

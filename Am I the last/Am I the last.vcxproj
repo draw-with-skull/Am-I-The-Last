@@ -77,6 +77,7 @@
     <Font Include="Fonts\MKyrill-Bold.ttf" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="Textures\Buildings\house_0.png" />
     <Image Include="Textures\Buttons\Audio.png" />
     <Image Include="Textures\Buttons\Back.png" />
     <Image Include="Textures\Buttons\Difficulty.png" />

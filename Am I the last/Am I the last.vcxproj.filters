@@ -61,6 +61,9 @@
     <Filter Include="SRC\Structs">
       <UniqueIdentifier>{e4b5ac25-f58e-45e4-a0fb-085c543b9e68}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource Files\buildings">
+      <UniqueIdentifier>{8462d1ad-8fe7-4a42-88d0-dc2e1c09973e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -277,6 +280,9 @@
     </Image>
     <Image Include="Textures\Maps\3.png">
       <Filter>Resource Files\Maps</Filter>
+    </Image>
+    <Image Include="Textures\Buildings\house_0.png">
+      <Filter>Resource Files\buildings</Filter>
     </Image>
   </ItemGroup>
 </Project>

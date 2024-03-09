@@ -3,8 +3,18 @@
 #include <SFML/Graphics/RenderTarget.hpp>
 #include <SFML/Graphics/Texture.hpp>
 #include <SFML/Graphics/Sprite.hpp>
+
 class Animation
 {
+public:
+	enum TYPE
+	{
+		NONE,
+		ROTATE,
+		IDLE,
+		WALKING
+	};
+
 public:
 	Animation(sf::Texture *sprite_sheet,unsigned int frame_w,unsigned int frame_h,unsigned short frame_count,float frame_time,unsigned int frame_row);
 	//virtual ~Animation();
