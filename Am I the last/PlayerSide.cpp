@@ -18,7 +18,11 @@ void PlayerSide::render(sf::RenderTarget* window)
 
 void PlayerSide::update(sf::Vector2f mouse_position, const float& dt)
 {
-	this->animation_manager->update(Animation::IDLE, { 140,100 }, dt);
+	this->update_input();
+	this->update_animation_state();
+	this->position += this->direction * speed * dt;
+	
+	this->animation_manager->update(type, this->position, dt);
 }
 
 void PlayerSide::init()
@@ -26,4 +30,26 @@ void PlayerSide::init()
 	this->animation_manager->add_animation(Animation::ROTATE, 8, 0);
 	this->animation_manager->add_animation(Animation::WALKING, 8, 1);
 
+}
+
+void PlayerSide::update_input()
+{
+	this->direction={ 0,0 };
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)){
+		this->direction.x = -1;
+	}
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
+		this->direction.x = 1;
+	}
+}
+
+void PlayerSide::update_animation_state()
+{
+	if (direction.x == 0 && direction.y == 0) {
+		this->type = Animation::ROTATE;
+	}
+
+	if (direction.x != 0 && direction.y == 0) {
+		this->type = Animation::WALKING;
+	}
 }
