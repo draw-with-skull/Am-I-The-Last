@@ -2,7 +2,7 @@
 #include<SFML/Graphics/RenderTarget.hpp>
 #include<SFML/Graphics/Texture.hpp>
 #include<SFML/Graphics/Sprite.hpp>
-#include"Animation.h"
+#include"AnimationManager.h"
 #include"AssetImporter.h"
 class PlayerSide
 {
@@ -17,7 +17,7 @@ private:
 
 private:
 	sf::Texture *sprite_sheet;
-	Animation *animation;
+	AnimationManager *animation_manager;
 
 };
 

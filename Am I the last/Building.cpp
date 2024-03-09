@@ -6,7 +6,7 @@ void Building::update(const float& dt)
 	this->try_to_end_state(sf::Keyboard::Escape);
 	this->update_view();
 	this->update_input(dt);
-
+	this->player.update({ 0,0 }, dt);
 }
 
 void Building::update_input(const float& dt)
@@ -19,6 +19,7 @@ void Building::render(sf::RenderTarget* target)
 		target = this->window;
 	target->setView(this->view);
 	target->draw(*this->interior);
+	this->player.render(target);
 }
 
 void Building::end_state()

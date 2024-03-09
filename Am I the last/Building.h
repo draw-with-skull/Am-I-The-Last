@@ -4,6 +4,9 @@
 #include "State.h"
 #include "StateManager.h"
 #include "AssetImporter.h"
+#include "PlayerSide.h"
+
+
 class Building:public State
 {
 public:
@@ -42,7 +45,7 @@ private:
 	sf::Sprite* interior;
 	sf::View view;
 	INTERIOR type;
-
+	PlayerSide player;
 	const sf::Vector2f view_size = sf::Vector2f(240, 135);
 
 };
