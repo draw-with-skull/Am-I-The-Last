@@ -37,9 +37,11 @@ void PlayerSide::update_input()
 	this->direction={ 0,0 };
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::A)){
 		this->direction.x = -1;
+		this->animation_manager->flip(true);
 	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::D)) {
 		this->direction.x = 1;
+		this->animation_manager->flip(false);
 	}
 }
 

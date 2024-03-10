@@ -38,6 +38,7 @@ private:
 	
 	bool active{ false };
 	bool continuous{ false };
+	bool is_flipped{ false };
 
 	sf::Sprite sprite;
 	sf::IntRect source_rect;

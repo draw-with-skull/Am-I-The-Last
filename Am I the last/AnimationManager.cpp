@@ -30,17 +30,20 @@ void AnimationManager::add_animation(Animation::TYPE type, unsigned short frame_
 
 void AnimationManager::update(Animation::TYPE type, sf::Vector2f position, const float& dt)
 {
-	this->key = type;
 
-	if (this->key == Animation::NONE) { return; }
+	if (type == Animation::NONE) { return; }
 	//the animation is not added
-	if (!std::count(existing_animations.begin(), existing_animations.end(), this->key)) 
+	
+	if (!std::count(existing_animations.begin(), existing_animations.end(), type)) 
 	{ 
 		this->key = Animation::NONE;
 		return; 
 	}
 	
+	this->key = type;
+	
 	this->animations.at(this->key)->start();
+	this->animations.at(this->key)->flip(this->fliped);
 	this->animations.at(this->key)->update(position, dt);
 }
 
@@ -48,4 +51,9 @@ void AnimationManager::render(sf::RenderTarget* window)
 {
 	if (this->key == Animation::NONE) { return; }
 	this->animations.at(this->key)->render(window);
+}
+
+void AnimationManager::flip(bool flip)
+{
+	this->fliped = flip;
 }
