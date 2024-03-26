@@ -23,6 +23,8 @@
     <ClCompile Include="AnimationManager.cpp" />
     <ClCompile Include="AssetImporter.cpp" />
     <ClCompile Include="Building.cpp" />
+    <ClCompile Include="BuildingInterior.cpp" />
+    <ClCompile Include="BuildingSingleInterior.cpp" />
     <ClCompile Include="Button.cpp" />
     <ClCompile Include="City.cpp" />
     <ClCompile Include="Debug.cpp" />
@@ -45,7 +47,9 @@
     <ClInclude Include="AnimationManager.h" />
     <ClInclude Include="AssetImporter.h" />
     <ClInclude Include="Building.h" />
+    <ClInclude Include="BuildingInterior.h" />
     <ClInclude Include="BuildingBounds.h" />
+    <ClInclude Include="BuildingSingleInterior.h" />
     <ClInclude Include="Button.h" />
     <ClInclude Include="City.h" />
     <ClInclude Include="Debug.h" />

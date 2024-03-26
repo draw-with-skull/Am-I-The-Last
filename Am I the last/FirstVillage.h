@@ -1,7 +1,7 @@
 #pragma once
 #include "State.h"
 #include "StartingCity.h"
-#include "Building.h"
+#include "BuildingInterior.h"
 #include "City.h"
 class FirstVillage:public State,public City
 {

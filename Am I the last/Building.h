@@ -1,52 +1,23 @@
 #pragma once
-#include <vector>
 #include <string>
-#include "State.h"
-#include "StateManager.h"
+#include <SFML/Graphics/RenderWindow.hpp>
 #include "AssetImporter.h"
-#include "PlayerSide.h"
-
-
-class Building:public State
+#include <SFML/Graphics/Sprite.hpp>
+class Building
 {
 public:
-	enum INTERIOR
-	{
-		HOUSE_0,
-		HOUSE_1,
-		HOUSE_2,
-		HOUSE_3,
-		HOUSE_4,
-		HOUSE_5,
-		HOUSE_6,
-		HOUSE_7,
-		HOUSE_8,
-		HOUSE_9,
-		WATCH_TOWER,
-
-	};
-public://constructor destructor
-	Building(INTERIOR type, sf::RenderWindow* window, StateManager* manager);
+	Building(const std::string textur_name,sf::RenderWindow *target);
 	virtual ~Building();
 
-	// Inherited via State
-	virtual void update(const float& dt) override;
-	virtual void update_input(const float& dt) override;
-	virtual void render(sf::RenderTarget* target) override;
-	virtual void end_state() override;
-	virtual void import_assets() override;
-
-private:
-	void import_data();
-	void update_view();
-	std::string get_type();
-private:
+	virtual void update(const float& dt, sf::Vector2f position) = 0;
+	virtual void render(const sf::RenderTarget* target)=0;
+protected:
+	void update_view(const sf::Vector2f position);
+protected:
 	sf::Texture* interior_texture;
 	sf::Sprite* interior;
+	sf::RenderWindow* window;
 	sf::View view;
-	INTERIOR type;
-	PlayerSide player;
 	const sf::Vector2f view_size = sf::Vector2f(240, 135);
-
 };
 

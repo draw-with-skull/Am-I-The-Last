@@ -122,7 +122,7 @@ void FirstVillage::import_data()
 
 void FirstVillage::init_buildings()
 {
-	this->building_bounds.push_back({ Building::HOUSE_0,
+	this->building_bounds.push_back({ BuildingInterior::HOUSE_0,
 		{
 		{166,159},
 		{195,173},

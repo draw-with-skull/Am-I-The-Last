@@ -28,6 +28,7 @@ void Animation::update(const sf::Vector2f position, const float& dt)
 		this->frame_time_left += this->frame_time;
 		this->current_frame = ++this->current_frame % this->frame_count;
 		this->source_rect.left = this->frame_wigth * this->current_frame;
+
 		if (is_flipped) {
 			this->source_rect.left += this->frame_wigth;
 			this->source_rect.width = -(int)this->frame_wigth;
@@ -36,8 +37,6 @@ void Animation::update(const sf::Vector2f position, const float& dt)
 			this->source_rect.width = this->frame_wigth;
 		}
 	}
-
-	
 
 	this->sprite.setTextureRect(this->source_rect);
 	this->sprite.setPosition(position);

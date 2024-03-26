@@ -13,6 +13,8 @@ public:
 public:
 	void render(sf::RenderTarget* window);
 	void update(sf::Vector2f mouse_position, const float& dt);
+
+	sf::Vector2f get_position();
 private:
 	void init();
 	void update_input();

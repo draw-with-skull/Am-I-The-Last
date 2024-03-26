@@ -34,15 +34,6 @@
     <Filter Include="SRC\States\Meniu_states">
       <UniqueIdentifier>{dde731df-6850-4acf-984d-5aa518414cef}</UniqueIdentifier>
     </Filter>
-    <Filter Include="SRC\Citys">
-      <UniqueIdentifier>{bac4b7d2-20d8-4922-9878-cc25098539c7}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SRC\Citys\StartingCity">
-      <UniqueIdentifier>{ce57c61c-9366-456c-a9f0-c015a632e13b}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="SRC\Entety">
-      <UniqueIdentifier>{f1a2c437-f6f7-459d-8ff8-f1a938135888}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Resource Files\Maps">
       <UniqueIdentifier>{ceec1299-e56d-4e19-8a68-15bccaf1a0e2}</UniqueIdentifier>
     </Filter>
@@ -55,14 +46,26 @@
     <Filter Include="SRC\Managers">
       <UniqueIdentifier>{8bf5be0d-7e22-44fa-bda0-a519d7987384}</UniqueIdentifier>
     </Filter>
-    <Filter Include="SRC\Citys\FirstVillage">
-      <UniqueIdentifier>{ec5fbc6e-1d05-423b-93f3-0bb9ef85e2c3}</UniqueIdentifier>
-    </Filter>
     <Filter Include="SRC\Structs">
       <UniqueIdentifier>{e4b5ac25-f58e-45e4-a0fb-085c543b9e68}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resource Files\buildings">
       <UniqueIdentifier>{8462d1ad-8fe7-4a42-88d0-dc2e1c09973e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SRC\States\Citys">
+      <UniqueIdentifier>{bac4b7d2-20d8-4922-9878-cc25098539c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SRC\States\Citys\StartingCity">
+      <UniqueIdentifier>{ce57c61c-9366-456c-a9f0-c015a632e13b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SRC\States\Citys\FirstVillage">
+      <UniqueIdentifier>{ec5fbc6e-1d05-423b-93f3-0bb9ef85e2c3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SRC\Entity">
+      <UniqueIdentifier>{f1a2c437-f6f7-459d-8ff8-f1a938135888}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="SRC\Entity\Building">
+      <UniqueIdentifier>{957309d0-b15c-4135-8356-c5f1ee8158a6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -73,10 +76,7 @@
       <Filter>SRC\Game</Filter>
     </ClCompile>
     <ClCompile Include="Entity.cpp">
-      <Filter>SRC\Entety</Filter>
-    </ClCompile>
-    <ClCompile Include="Button.cpp">
-      <Filter>SRC\Entety</Filter>
+      <Filter>SRC\Entity</Filter>
     </ClCompile>
     <ClCompile Include="Main_meniu_state.cpp">
       <Filter>SRC\States\Meniu_states</Filter>
@@ -88,10 +88,10 @@
       <Filter>SRC\States\Meniu_states</Filter>
     </ClCompile>
     <ClCompile Include="Player_top.cpp">
-      <Filter>SRC\Entety</Filter>
+      <Filter>SRC\Entity</Filter>
     </ClCompile>
     <ClCompile Include="StartingCity.cpp">
-      <Filter>SRC\Citys\StartingCity</Filter>
+      <Filter>SRC\States\Citys\StartingCity</Filter>
     </ClCompile>
     <ClCompile Include="Math.cpp">
       <Filter>SRC\Util</Filter>
@@ -100,31 +100,40 @@
       <Filter>SRC\Managers</Filter>
     </ClCompile>
     <ClCompile Include="FirstVillage.cpp">
-      <Filter>SRC\Citys\FirstVillage</Filter>
+      <Filter>SRC\States\Citys\FirstVillage</Filter>
     </ClCompile>
     <ClCompile Include="AssetImporter.cpp">
       <Filter>SRC\Util</Filter>
     </ClCompile>
-    <ClCompile Include="Building.cpp">
+    <ClCompile Include="BuildingInterior.cpp">
       <Filter>SRC\States</Filter>
     </ClCompile>
     <ClCompile Include="State.cpp">
-      <Filter>SRC\Entety</Filter>
+      <Filter>SRC\Entity</Filter>
     </ClCompile>
     <ClCompile Include="Debug.cpp">
       <Filter>SRC\Util</Filter>
     </ClCompile>
     <ClCompile Include="City.cpp">
-      <Filter>SRC\Entety</Filter>
+      <Filter>SRC\Entity</Filter>
     </ClCompile>
     <ClCompile Include="PlayerSide.cpp">
-      <Filter>SRC\Entety</Filter>
+      <Filter>SRC\Entity</Filter>
     </ClCompile>
     <ClCompile Include="AnimationManager.cpp">
       <Filter>SRC\Managers</Filter>
     </ClCompile>
     <ClCompile Include="Animation.cpp">
-      <Filter>SRC\Entety</Filter>
+      <Filter>SRC\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="BuildingSingleInterior.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Button.cpp">
+      <Filter>SRC\Entity</Filter>
+    </ClCompile>
+    <ClCompile Include="Building.cpp">
+      <Filter>SRC\Entity\Building</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -132,10 +141,10 @@
       <Filter>SRC\Game</Filter>
     </ClInclude>
     <ClInclude Include="Entity.h">
-      <Filter>SRC\Entety</Filter>
+      <Filter>SRC\Entity</Filter>
     </ClInclude>
     <ClInclude Include="Button.h">
-      <Filter>SRC\Entety</Filter>
+      <Filter>SRC\Entity</Filter>
     </ClInclude>
     <ClInclude Include="Main_meniu_state.h">
       <Filter>SRC\States\Meniu_states</Filter>
@@ -147,10 +156,10 @@
       <Filter>SRC\States\Meniu_states</Filter>
     </ClInclude>
     <ClInclude Include="Player_top.h">
-      <Filter>SRC\Entety</Filter>
+      <Filter>SRC\Entity</Filter>
     </ClInclude>
     <ClInclude Include="StartingCity.h">
-      <Filter>SRC\Citys\StartingCity</Filter>
+      <Filter>SRC\States\Citys\StartingCity</Filter>
     </ClInclude>
     <ClInclude Include="Math.h">
       <Filter>SRC\Util</Filter>
@@ -159,16 +168,16 @@
       <Filter>SRC\Managers</Filter>
     </ClInclude>
     <ClInclude Include="FirstVillage.h">
-      <Filter>SRC\Citys\FirstVillage</Filter>
+      <Filter>SRC\States\Citys\FirstVillage</Filter>
     </ClInclude>
     <ClInclude Include="AssetImporter.h">
       <Filter>SRC\Util</Filter>
     </ClInclude>
-    <ClInclude Include="Building.h">
+    <ClInclude Include="BuildingInterior.h">
       <Filter>SRC\States</Filter>
     </ClInclude>
     <ClInclude Include="State.h">
-      <Filter>SRC\Entety</Filter>
+      <Filter>SRC\Entity</Filter>
     </ClInclude>
     <ClInclude Include="BuildingBounds.h">
       <Filter>SRC\Structs</Filter>
@@ -177,16 +186,22 @@
       <Filter>SRC\Util</Filter>
     </ClInclude>
     <ClInclude Include="City.h">
-      <Filter>SRC\Entety</Filter>
+      <Filter>SRC\Entity</Filter>
     </ClInclude>
     <ClInclude Include="PlayerSide.h">
-      <Filter>SRC\Entety</Filter>
+      <Filter>SRC\Entity</Filter>
     </ClInclude>
     <ClInclude Include="AnimationManager.h">
       <Filter>SRC\Managers</Filter>
     </ClInclude>
     <ClInclude Include="Animation.h">
-      <Filter>SRC\Entety</Filter>
+      <Filter>SRC\Entity</Filter>
+    </ClInclude>
+    <ClInclude Include="Building.h">
+      <Filter>SRC\Entity\Building</Filter>
+    </ClInclude>
+    <ClInclude Include="BuildingSingleInterior.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

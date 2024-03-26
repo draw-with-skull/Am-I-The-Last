@@ -21,8 +21,12 @@ void PlayerSide::update(sf::Vector2f mouse_position, const float& dt)
 	this->update_input();
 	this->update_animation_state();
 	this->position += this->direction * speed * dt;
-	
 	this->animation_manager->update(type, this->position, dt);
+}
+
+sf::Vector2f PlayerSide::get_position()
+{
+	return this->position;
 }
 
 void PlayerSide::init()

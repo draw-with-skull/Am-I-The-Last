@@ -78,7 +78,7 @@ void StartingCity::update_buildings()
 	for (const BuildingBounds& building_bound : this->building_bounds) {
 		if (Math::PointInsidePoligon(player->position, building_bound.polygon)) {
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)) {
-				this->manager->add_state(new Building(building_bound.type, this->window, this->manager));
+				this->manager->add_state(new BuildingInterior(building_bound.type, this->window, this->manager));
 			}
 		}
 	}
@@ -122,7 +122,7 @@ void StartingCity::try_to_change_state()
 
 void StartingCity::init_buildings()
 {
-	this->building_bounds.push_back({ Building::INTERIOR::HOUSE_0,
+	this->building_bounds.push_back({ BuildingInterior::INTERIOR::HOUSE_0,
 	{
 	{166,159},
 	{195,173},
@@ -131,7 +131,7 @@ void StartingCity::init_buildings()
 	{224,98},
 	{180,120},
 	} });
-	this->building_bounds.push_back({ Building::INTERIOR::WATCH_TOWER,
+	this->building_bounds.push_back({ BuildingInterior::INTERIOR::WATCH_TOWER,
 	{
 	{261,224},
 	{323,253},
