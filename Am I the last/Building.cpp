@@ -6,6 +6,7 @@ Building::Building(const std::string textur_name, sf::RenderWindow *target)
 	this->interior_texture = AssetImporter::get_texture(AssetImporter::BUILDING, textur_name);
 	this->interior = new sf::Sprite();
 	this->interior->setTexture(*this->interior_texture);
+	this->view.setSize(this->view_size);
 }
 Building::~Building() {
 	delete this->interior;
